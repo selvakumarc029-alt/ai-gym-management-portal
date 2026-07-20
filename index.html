@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AI Gym — intelligent gym management for memberships, attendance, payments and member engagement.">
+  <title>AI Gym — Intelligent Gym Management</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=10">
+  <link rel="stylesheet" href="final-design.css?v=16">
+</head>
+<body class="landing-page">
+  <header class="site-header" id="siteHeader">
+    <a class="brand brand-logo-link" href="#home" aria-label="AI Gym home"><span class="brand-logo-symbol" aria-hidden="true"></span><span class="brand-logo-word" aria-hidden="true"></span></a>
+    <nav aria-label="Primary navigation">
+      <a href="#features">Features</a><a href="#how">How it works</a><a href="#reviews">Reviews</a><a href="#pricing">Pricing</a>
+    </nav>
+    <div class="nav-actions"><a class="login-link" href="login.html">Log in</a><a class="button button-small pulse" href="register.html?source=trial">Start Free Trial</a><button class="menu-button" id="menuButton" aria-label="Open navigation" aria-expanded="false">☰</button></div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-glow"></div><div class="grid-bg"></div>
+      <div class="hero-content reveal visible">
+        <div class="trust-pill"><i></i> Trusted by 5000+ fitness professionals</div>
+        <h1>Manage Your Gym's <span class="rotating-word" id="rotatingWord">Members</span><br>From One Platform</h1>
+        <p>Manage memberships, attendance, payments, trainers and member engagement from one intelligent platform built for modern fitness businesses.</p>
+        <a class="button button-hero pulse" href="register.html?source=trial">Start Free Trial <span>→</span></a>
+        <div class="microcopy"><span>✓ No credit card</span><span>✓ 7-day free trial</span><span>✓ Cancel anytime</span></div>
+      </div>
+      <div class="dashboard-shell reveal visible" aria-label="AI Gym dashboard preview">
+        <img class="real-admin-dashboard-preview" src="assets/admin-dashboard-landing.png?v=1" alt="AI Gym admin dashboard with member, trainer, attendance, billing, revenue, retention, and recent activity management">
+        <aside><div class="mini-brand"><img src="assets/ai-gym-logo-4k.png" alt=""></div><b>Overview</b><span>Members</span><span>Attendance</span><span>Payments</span><span>Trainers</span><span>AI Assistant</span></aside>
+        <div class="dashboard-main"><div class="dashboard-top"><div><small>WELCOME BACK</small><h3>Gym overview</h3></div><span class="avatar">AK</span></div><div class="metric-grid"><div><small>Active members</small><strong>1,248</strong><em>↑ 12.8%</em></div><div><small>Today's check-ins</small><strong>186</strong><em>↑ 8.2%</em></div><div><small>Monthly revenue</small><strong>₹4.8L</strong><em>↑ 18.4%</em></div><div><small>Retention rate</small><strong>94%</strong><em>↑ 4.1%</em></div></div><div class="chart-card"><div class="chart-heading"><b>Revenue growth</b><span>Last 6 months</span></div><div class="bars"><i style="height:32%"></i><i style="height:46%"></i><i style="height:39%"></i><i style="height:62%"></i><i style="height:72%"></i><i style="height:91%"></i></div></div></div>
+      </div>
+    </section>
+
+    <section class="trusted section-tight reveal">
+      <p>Powering ambitious gyms and studios</p><div class="logo-marquee"><div class="logo-track"><span>IRON LAB</span><span>PULSEFIT</span><span>FITZONE</span><span>ARENA</span><span>CORE CLUB</span><span>BODYWORKS</span><span>IRON LAB</span><span>PULSEFIT</span><span>FITZONE</span><span>ARENA</span><span>CORE CLUB</span><span>BODYWORKS</span></div></div>
+      <div class="integrations"><div><span class="section-label">PLUG & PLAY</span><h3>Works with your existing ecosystem.</h3><p>Connect the tools your team already uses.</p></div><div class="integration-grid"><span>WhatsApp</span><span>Razorpay</span><span>Google</span><span>Biometric</span><span>Stripe</span><span>Calendar</span></div></div>
+    </section>
+
+    <section class="showcase section" id="features">
+      <div class="section-heading reveal"><span class="section-label green">MEMBER ENGAGEMENT</span><h2>Engage Members <span>Automatically</span></h2><p>Turn routine communication into effortless, timely conversations.</p></div>
+      <div class="showcase-grid reveal"><div class="feature-tabs" role="tablist"><button class="feature-tab active" data-tab="renewal"><i>↻</i><span><b>Renewal Reminders</b><small>Bring members back before their plans expire.</small></span><em></em></button><button class="feature-tab" data-tab="broadcast"><i>✦</i><span><b>Smart Broadcasts</b><small>Share announcements and offers in one click.</small></span><em></em></button><button class="feature-tab" data-tab="birthday"><i>★</i><span><b>Birthday Automation</b><small>Make every member feel remembered.</small></span><em></em></button><button class="feature-tab" data-tab="leads"><i>↗</i><span><b>Lead Follow-ups</b><small>Convert trials with timely nudges.</small></span><em></em></button></div>
+        <div class="phone-chat"><div class="chat-header"><span class="chat-logo"><img src="assets/ai-gym-logo-4k.png" alt=""></span><div><b>AI Gym</b><small>Business account · online</small></div></div><div class="chat-body" id="chatBody"></div></div></div>
+    </section>
+
+    <section class="biometric section alternate">
+      <div class="section-heading reveal"><span class="section-label purple">SEAMLESS HARDWARE</span><h2>Powerful Biometric <span>Integration</span></h2><p>Automate access and attendance with devices already installed at your gym.</p></div>
+      <div class="biometric-demo reveal"><div class="scanner"><div class="fingerprint">◎</div><span class="scan-line"></span><b>Access granted</b><small>Arjun Kumar · Premium</small></div><div class="checkin-list"><div class="list-head"><b>Live attendance</b><span>186 checked in</span></div><article><i>AK</i><div><b>Arjun Kumar</b><small>Premium member</small></div><time>08:42</time></article><article><i>PS</i><div><b>Priya Shah</b><small>Strength program</small></div><time>08:39</time></article><article><i>VR</i><div><b>Vikram Rao</b><small>Annual member</small></div><time>08:35</time></article></div><div class="benefit-list"><div><i>✓</i><span><b>Automatic check-in</b><small>No manual attendance entry</small></span></div><div><i>⊘</i><span><b>Block expired plans</b><small>Smart access control</small></span></div><div><i>◷</i><span><b>Staff tracking</b><small>Precise shift records</small></span></div><div><i>▥</i><span><b>Live reports</b><small>Know your occupancy</small></span></div></div></div>
+    </section>
+
+    <section class="features section alternate" id="featureGrid">
+      <div class="section-heading reveal"><span class="section-label">EVERYTHING YOU NEED</span><h2>Powerful Features.<br><span>Zero Complexity.</span></h2></div>
+      <div class="bento-grid reveal"><article class="bento large"><span class="card-tag">CORE</span><i>◫</i><h3>Membership Management</h3><p>Create flexible plans, track renewals, freeze memberships and automate expiry reminders.</p><div class="member-mini"><span>Active memberships</span><strong>1,248</strong><em>+24%</em></div></article><article class="bento"><i>◎</i><h3>Attendance Tracking</h3><p>QR, RFID, biometric and app-based check-ins.</p><div class="rings"><span>86%</span></div></article><article class="bento"><i>₹</i><h3>Billing Automation</h3><p>Invoices, dues and payments—all reconciled.</p><div class="money"><b>₹18,400</b><small>collected today</small></div></article><article class="bento wide green-card"><span class="card-tag">ENGAGEMENT</span><i>◉</i><h3>WhatsApp Engagement</h3><p>Renewal alerts, payment reminders, class updates and promotions delivered automatically.</p><div class="stat-row"><span><b>94%</b><small>Open rate</small></span><span><b>5×</b><small>Response</small></span><span><b>Auto</b><small>Follow-ups</small></span></div></article><article class="bento"><i>⌁</i><h3>CRM & Leads</h3><p>Move enquiries from first contact to membership.</p><div class="pipeline"><span></span><span></span><span></span></div></article><article class="bento"><i>AI</i><h3>Smart Assistant</h3><p>Personalized workout and diet recommendations.</p><div class="ai-orb"></div></article><article class="bento"><i>⌘</i><h3>Multi-Branch</h3><p>Every location in one unified control center.</p><div class="branches"><span>HQ</span><span>B1</span><span>B2</span></div></article></div>
+    </section>
+
+    <section class="steps section" id="how"><div class="section-heading reveal"><span class="section-label">FAST ONBOARDING</span><h2>Get Started in Minutes</h2><p>No complicated setup. Launch in three simple steps.</p></div><div class="steps-grid reveal"><article><span>01</span><i>✦</i><h3>Create your account</h3><p>Sign up in two minutes and begin your free trial.</p></article><article><span>02</span><i>⌁</i><h3>Set up your gym</h3><p>Import members, plans and staff with guided setup.</p></article><article><span>03</span><i>↗</i><h3>Start growing</h3><p>Automate daily work and focus on your members.</p></article></div><div class="trial-banner reveal"><div><span class="section-label">READY WHEN YOU ARE</span><h3>Experience intelligent gym management today.</h3><div class="microcopy"><span>✓ Full access</span><span>✓ No credit card</span><span>✓ Cancel anytime</span></div></div><a class="button pulse" href="register.html?source=trial">Start Free Trial →</a></div></section>
+
+    <section class="reviews section alternate" id="reviews"><div class="section-heading reveal"><span class="section-label">SUCCESS STORIES</span><h2>Loved by Gym Owners</h2><p>Real results from fitness businesses using AI Gym every day.</p></div><div class="review-marquee reveal"><div class="review-track"><article><div>★★★★★</div><p>“Attendance, renewals and trainer schedules finally work together. Our front desk saves hours every week.”</p><b>Arun Kumar</b><small>Founder, Iron Lab</small></article><article><div>★★★★★</div><p>“The automated reminders transformed our retention. Members renew before we even need to call.”</p><b>Priya Shah</b><small>Owner, PulseFit</small></article><article><div>★★★★★</div><p>“Clean, fast and remarkably easy for our whole team. The AI plans are a genuine advantage.”</p><b>Vikram Rao</b><small>Director, Core Club</small></article><article><div>★★★★★</div><p>“Attendance, renewals and trainer schedules finally work together. Our front desk saves hours every week.”</p><b>Arun Kumar</b><small>Founder, Iron Lab</small></article><article><div>★★★★★</div><p>“The automated reminders transformed our retention. Members renew before we even need to call.”</p><b>Priya Shah</b><small>Owner, PulseFit</small></article></div></div></section>
+
+    <section class="pricing section" id="pricing"><div class="section-heading reveal"><span class="section-label">SIMPLE PRICING</span><h2>Plans That Grow With You</h2><p>Start free. Upgrade when your business is ready.</p><div class="billing-toggle" role="group" aria-label="Billing period"><button class="active" data-billing="monthly">Monthly</button><button data-billing="annual">Annual <em>Save 25%</em></button></div></div><div class="pricing-grid reveal"><article><span class="plan-name">STARTER</span><h3 class="plan-price" data-monthly="749" data-annual="8,999">₹749<small>/month</small></h3><p>For independent studios getting organized.</p><ul><li>Unlimited member records</li><li>Attendance and billing</li><li>Lead tracking</li><li>Up to 3 staff users</li><li>Automated reminders</li></ul><a class="button button-outline" href="register.html">Start Free Trial</a></article><article class="popular"><span class="popular-label">MOST POPULAR</span><span class="plan-name">PRO</span><h3 class="plan-price" data-monthly="999" data-annual="11,999">₹999<small>/month</small></h3><p>For growing gyms ready to automate.</p><ul><li>Everything in Starter</li><li>Member mobile portal</li><li>Biometric integration</li><li>WhatsApp automation</li><li>Priority support</li></ul><a class="button pulse" href="register.html">Start Free Trial</a></article><article><span class="plan-name">SCALE</span><h3 class="plan-price" data-monthly="2,083" data-annual="24,999">₹2,083<small>/month</small></h3><p>For multi-location fitness businesses.</p><ul><li>Everything in Pro</li><li>Multi-branch dashboard</li><li>Up to 25 staff users</li><li>Advanced analytics</li><li>Custom onboarding</li></ul><a class="button button-outline" href="register.html">Start Free Trial</a></article></div></section>
+
+    <section class="faq section alternate"><div class="section-heading reveal"><span class="section-label">FAQ</span><h2>Frequently Asked Questions</h2></div><div class="faq-list reveal"><details open><summary>Can I import my existing member database?<span>+</span></summary><p>Yes. Import members, plans and payment history using a spreadsheet, or let our onboarding team assist you.</p></details><details><summary>Does AI Gym support biometric devices?<span>+</span></summary><p>Yes. The portal supports common biometric and RFID attendance devices with real-time access rules.</p></details><details><summary>Can I manage multiple branches?<span>+</span></summary><p>Yes. Scale plans provide consolidated reporting, member transfers and location-level access controls.</p></details><details><summary>Is there a free trial?<span>+</span></summary><p>Every plan includes a 7-day free trial with no credit card required.</p></details><details><summary>What support is included?<span>+</span></summary><p>You receive onboarding assistance and support through email, phone and WhatsApp.</p></details></div></section>
+
+    <section class="final-cta"><div class="grid-bg"></div><div class="reveal"><span class="section-label">JOIN THE NEXT GENERATION</span><h2>Ready to Grow Your Gym?</h2><p>Automate operations, delight members and make every decision with confidence.</p><a class="button button-hero pulse" href="register.html?source=trial">Start Free Trial →</a><small>7-day free trial · No credit card · Setup in minutes</small></div></section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-about">
+      <a class="brand footer-logo-link" href="#home" aria-label="AI Gym home"><span class="brand-logo-symbol" aria-hidden="true"></span><span class="brand-logo-word" aria-hidden="true"></span></a>
+      <p>AI GYM helps every member build strength, confidence, and healthier habits with expert coaching and intelligent training.</p>
+    </div>
+    <div class="footer-column"><strong>Explore</strong><a href="#features">Facilities</a><a href="#pricing">Memberships</a><a href="login.html">Member login</a><a href="register.html">Join AI GYM</a></div>
+    <div class="footer-column"><strong>Training</strong><span>Strength training</span><span>Cardio & conditioning</span><span>Personal coaching</span><span>Workout planning</span></div>
+    <div class="footer-column"><strong>Visit & contact</strong><span>Open daily: 5:00 AM–11:00 PM</span><a href="mailto:support@aigym.com">support@aigym.com</a><span>Friendly support for members and trainers</span></div>
+    <div class="footer-bottom"><small>© 2026 AI GYM. All rights reserved.</small><span>Stronger every day.</span></div>
+  </footer>
+  <div class="bottom-bar" id="bottomBar"><div><b>Ready to automate your gym?</b><small>Start free — no credit card required</small></div><a class="button button-small pulse" href="register.html?source=trial">Start Free Trial</a></div>
+  <script src="script.js?v=10"></script>
+</body>
+</html>

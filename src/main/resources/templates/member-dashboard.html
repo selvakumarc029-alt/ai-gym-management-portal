@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Member Dashboard | AI Gym</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800;900&family=Barlow+Condensed:wght@700;800;900&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="assets/front-runner-frames/frame-001.png">
+  <link rel="stylesheet" href="dashboard.css?v=122">
+  <link rel="stylesheet" href="portal-theme.css?v=1">
+  <link rel="stylesheet" href="final-design.css?v=1">
+  <link rel="stylesheet" href="role-reference.css?v=39">
+</head>
+<body class="role-reference-body">
+  <main class="dashboard-shell role-reference-app" data-dashboard-role="member">
+    <aside class="dashboard-sidebar role-sidebar" aria-label="Member navigation">
+      <a class="sidebar-logo" href="index.html" aria-label="AI Gym home">A</a>
+      <button class="sidebar-collapse-toggle" type="button" aria-label="Collapse sidebar" aria-expanded="true"><span aria-hidden="true">&times;</span></button>
+      <nav>
+        <a class="active" href="#overview" data-role-view="overview">Overview</a>
+        <a href="#my-plan" data-role-view="my-plan">My Plan</a>
+        <a href="#progress" data-role-view="progress">Progress</a>
+        <a href="#attendance" data-role-view="attendance">Attendance</a>
+        <a href="#payments" data-role-view="payments">Payments</a>
+        <a href="#ai-coach" data-role-view="ai-coach">AI Coach</a>
+      </nav>
+      <a class="role-sidebar-logout" href="login.html" aria-label="Logout"><span>Logout</span></a>
+    </aside>
+    <div class="dashboard-content role-content">
+    <header class="dashboard-topbar role-utility-bar">
+      <div><small>WELCOME BACK</small><strong>Member workspace</strong></div>
+      <label class="role-global-search"><span>⌕</span><input type="search" placeholder="Search your dashboard" aria-label="Search member dashboard"></label>
+    </header>
+    <section class="metric-grid metric-grid-with-quick role-view-panel active member-top-kpis" data-role-panel="overview">
+      <article class="quick-card"><strong data-quick-value>0</strong><span data-quick-label>Live metric</span></article>
+      <div data-metrics class="metric-grid-inner"></div>
+    </section>
+    <section class="member-welcome-card role-view-panel active" data-role-panel="overview" data-member-welcome></section>
+    <section class="ai-daily-coach role-view-panel" data-role-panel="ai-coach" data-daily-coach></section>
+    <section class="member-board">
+      <div class="member-board-column">
+        <article class="card member-today-card role-view-panel" id="my-plan" data-role-panel="my-plan"><h2 data-list-title>Today plan</h2><ul class="task-list" data-primary-list></ul></article>
+        <article class="card role-view-panel" id="progress" data-role-panel="progress"><h2>Progress</h2><div data-member-progress></div></article>
+        <article class="card role-view-panel member-workout-details-card" data-role-panel="my-plan"><h2>Workout Details</h2><div data-member-workout></div></article>
+        <article class="card role-view-panel" data-role-panel="my-plan"><h2>Trainer</h2><div data-member-trainer></div></article>
+        <article class="card role-view-panel active" data-role-panel="overview"><h2>Profile</h2><div data-member-profile></div></article>
+      </div>
+      <div class="member-board-column">
+        <article class="card role-view-panel" data-role-panel="my-plan"><h2 data-action-title>Action</h2><div data-action-panel></div></article>
+        <article class="card role-view-panel" data-role-panel="my-plan"><h2>Nutrition & Recovery</h2><div data-member-wellness></div></article>
+        <article class="card role-view-panel" id="attendance" data-role-panel="attendance"><h2>Attendance</h2><div data-member-attendance></div></article>
+      </div>
+      <div class="member-board-column">
+        <article class="card role-view-panel" data-role-panel="payments"><h2>Membership</h2><div data-subscription-panel></div></article>
+        <article class="card role-view-panel" id="payments" data-role-panel="payments"><h2>Payments & Invoice</h2><div data-member-payments></div></article>
+        <article class="card role-view-panel" data-role-panel="payments"><h2>Issued Invoices</h2><div data-member-invoices></div></article>
+        <article class="card role-view-panel" data-role-panel="ai-coach"><h2>AI Fitness Tools</h2><div data-member-ai-tools></div></article>
+        <article class="card role-view-panel active" data-role-panel="overview"><h2>Notifications</h2><div data-member-notifications></div></article>
+      </div>
+    </section>
+    <section class="dashboard-grid member-activity-footer">
+      <article class="card role-view-panel active" data-role-panel="overview"><h2>Live Activity</h2><ul class="task-list" data-activity-list></ul></article>
+      <article class="card member-glance-card role-view-panel active" data-role-panel="overview">
+        <h2>Today at a glance</h2>
+        <div class="member-glance-list">
+          <div><span>Next session</span><strong>Today's workout</strong></div>
+          <div><span>Coach check-in</span><strong>Available today</strong></div>
+          <div><span>Recovery focus</span><strong>Hydration + mobility</strong></div>
+          <div><span>AI coach</span><strong class="glance-status"><i></i>Ready</strong></div>
+        </div>
+      </article>
+    </section>
+    </div>
+  </main>
+  <div class="member-ai-companion" data-member-ai-assistant></div>
+  <script src="dashboard.js?v=79"></script>
+  <script src="pet-runner.js?v=4"></script>
+</body>
+</html>

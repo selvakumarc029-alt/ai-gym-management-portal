@@ -1,0 +1,308 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --final-bg: #FFFFFF;
+  --final-text: #0C1220;
+  --final-primary: #F33514;
+  --final-primary-hover: #D92D0F;
+  --final-surface: #FFFFFF;
+  --final-soft: #F6F7F9;
+  --final-border: #DBDEE5;
+  --final-muted: #667085;
+  --bg: #FFFFFF;
+  --alt: #F6F7F9;
+  --panel: #FFFFFF;
+  --panel2: #F6F7F9;
+  --panel-2: #F6F7F9;
+  --text: #0C1220;
+  --muted: #667085;
+  --line: #DBDEE5;
+  --orange: #F33514;
+  --orange2: #F33514;
+  --green: #F33514;
+  --green-2: #F33514;
+  --portal-bg: #FFFFFF;
+  --portal-alt: #F6F7F9;
+  --portal-card: #FFFFFF;
+  --portal-card-2: #F6F7F9;
+  --portal-line: #DBDEE5;
+  --portal-text: #0C1220;
+  --portal-muted: #667085;
+  --portal-red: #F33514;
+  --portal-red-bright: #F33514;
+  --premium-gold: #F33514;
+  color-scheme: light;
+}
+
+html, body { background: var(--final-bg) !important; color: var(--final-text) !important; }
+body,button,input,select,textarea { font-family: Outfit, Arial, sans-serif !important; }
+h1,h2,h3,.brand,.mini-logo,.plan-price,.metric strong,.quick-card strong,
+.auth-copy h1,.dashboard-hero h1,.attendance-card h1,.card h2,.card h3,.section-heading h2 {
+  font-family: Outfit, Arial, sans-serif !important;
+  font-weight: 700 !important;
+}
+body::before { opacity:.45 !important; background-image:radial-gradient(#DBDEE5 1px,transparent 1px) !important; background-size:24px 24px !important; }
+
+/* Landing page */
+.site-header { color:#111827 !important; background:rgba(255,255,255,.92) !important; border-color:#DBDEE5 !important; }
+.site-header.scrolled { background:rgba(255,255,255,.94) !important; border-color:#DBDEE5 !important; }
+.brand { color:#111827 !important; }
+.brand>span:last-child,.brand span,.rotating-word,.section-heading h2 span { color:#F04D34 !important; }
+.site-header nav,.login-link { color:#4B5563 !important; }
+.site-header nav a:hover,.login-link:hover { color:#F04D34 !important; }
+.button,.nav-cta,.header-cta { border-color:#F04D34 !important; color:#fff !important; background:#F04D34 !important; box-shadow:none !important; }
+.button:hover { border-color:#D93D28 !important; background:#D93D28 !important; box-shadow:none !important; }
+.button-outline { color:#111827 !important; background:#fff !important; border-color:#DBDEE5 !important; }
+.hero { color:#111827 !important; background:#fff !important; }
+.hero-glow { background:radial-gradient(ellipse,rgba(240,77,52,.12),transparent 65%) !important; }
+.grid-bg { background-image:linear-gradient(rgba(17,24,39,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(17,24,39,.045) 1px,transparent 1px) !important; }
+.trust-pill,.section-label { color:#F04D34 !important; }
+.trust-pill { border-color:rgba(240,77,52,.28) !important; background:#FFF7F5 !important; }
+.hero-content>p,.section-heading p,.integrations p,.bento p,.steps-grid p,.final-cta p { color:#667085 !important; }
+.microcopy { color:#667085 !important; }
+.trusted,.showcase,.features,.steps,.pricing,.faq-section,.final-cta { color:#111827 !important; background:#fff !important; }
+.alternate,.mobile-section,.reviews,.faq { color:#111827 !important; background:#F6F7F9 !important; }
+.logo-track span,.trusted>p { color:#667085 !important; }
+.integrations,.feature-tab,.phone-chat,.scanner,.checkin-list,.benefit-list,.bento,.steps-grid article,.trial-banner,.review-track article,.pricing-grid article,.faq-list details {
+  color:#111827 !important;
+  border-color:#DBDEE5 !important;
+  background:#fff !important;
+  box-shadow:none !important;
+}
+.integration-grid span { color:#111827 !important; border:1px solid #DBDEE5 !important; background:#fff !important; }
+.feature-tab small,.chat-header small,.bento p,.review-track small,.pricing-grid article>p { color:#667085 !important; }
+.feature-tab.active { border-color:#F04D34 !important; background:#FFF7F5 !important; }
+.feature-tab.active>i,.feature-tab em { color:white !important; background:#F04D34 !important; box-shadow:none !important; }
+.phone-chat { background:#F6F7F9 !important; }
+.chat-header { background:#233D4C !important; color:#fff !important; }
+.chat-body { background:#F6F7F9 !important; }
+.bubble { color:#111827 !important; background:#fff !important; border:1px solid #DBDEE5 !important; }
+.bubble.sent { color:#fff !important; background:#F04D34 !important; border-color:#F04D34 !important; }
+.scanner,.checkin-list,.benefit-list { background:#fff !important; }
+.checkin-list article,.member-mini,.money { color:#111827 !important; background:#F6F7F9 !important; }
+.bento:hover { border-color:#F04D34 !important; box-shadow:0 16px 35px rgba(17,24,39,.08) !important; }
+.bento>i,.steps-grid i { color:#F04D34 !important; background:#FFF0EC !important; }
+.green-card { background:#fff !important; }
+.stat-row span { color:#111827 !important; border-color:#DBDEE5 !important; background:#F6F7F9 !important; }
+.billing-toggle { background:#EEF0F4 !important; }
+.billing-toggle button { color:#667085 !important; }
+.billing-toggle button.active { color:white !important; background:#F04D34 !important; }
+.pricing-grid .popular { border-color:#F04D34 !important; box-shadow:0 16px 35px rgba(240,77,52,.1) !important; }
+.pricing-grid li { color:#344054 !important; }
+.faq-list summary { color:#111827 !important; }
+.faq-list summary span,.faq-list details[open] summary span { color:#fff !important; background:#F04D34 !important; }
+.final-cta { background:#F6F7F9 !important; }
+footer { color:#111827 !important; background:#fff !important; border-color:#DBDEE5 !important; }
+.bottom-bar { color:#111827 !important; background:rgba(255,255,255,.96) !important; border-color:#DBDEE5 !important; }
+
+/* Keep the product preview intentionally app-like */
+.hero .dashboard-shell { border-color:#DBDEE5 !important; box-shadow:0 28px 70px rgba(17,24,39,.14) !important; }
+
+/* Authentication */
+.auth-card,.auth-card.register-card { border-color:#DBDEE5 !important; background:#fff !important; box-shadow:0 24px 70px rgba(17,24,39,.12) !important; }
+.bodybuilding-logo {
+  display:inline-flex !important;
+  width:188px;
+  height:64px;
+  overflow:hidden;
+  align-items:center;
+  justify-content:center;
+}
+.bodybuilding-logo img {
+  display:block;
+  width:100%;
+  max-width:100%;
+  height:auto;
+  object-fit:contain;
+}
+.auth-panel,.auth-card.register-card .auth-panel { color:#111827 !important; background:#fff !important; }
+.mini-logo { color:#111827 !important; }
+.auth-copy h1 { color:#111827 !important; }
+.auth-copy>p,.form-row { color:#667085 !important; }
+.auth-form label { color:#344054 !important; }
+.auth-form input:not([type="checkbox"]) { color:#111827 !important; border-color:#DBDEE5 !important; background:#F9FAFB !important; }
+.auth-form input:focus { border-color:#F04D34 !important; box-shadow:0 0 0 4px rgba(240,77,52,.1) !important; }
+.auth-form button { border-color:#F04D34 !important; background:#F04D34 !important; box-shadow:none !important; }
+.demo-credentials article { color:#667085 !important; border-color:#DBDEE5 !important; background:#F9FAFB !important; }
+.demo-credentials strong { color:#111827 !important; }
+.auth-illustration {
+  border-color:#DBDEE5 !important;
+  background:#080b10 url("assets/identity-couple-workout-branded.png") center center / cover no-repeat !important;
+}
+.auth-illustration::before {
+  display:none !important;
+}
+.auth-illustration::after {
+  display:none !important;
+}
+
+/* Dashboards and attendance */
+.dashboard-topbar { border-color:#DBDEE5 !important; background:rgba(255,255,255,.94) !important; }
+.logout-link,.attendance-back-link { color:#344054 !important; border-color:#DBDEE5 !important; background:#fff !important; }
+.logout-link:hover { color:#F04D34 !important; border-color:#F04D34 !important; background:#FFF7F5 !important; }
+.dashboard-hero { border-color:#DBDEE5 !important; background:radial-gradient(circle at 88% 25%,rgba(240,77,52,.12),transparent 22rem),#F6F7F9 !important; box-shadow:none !important; }
+.dashboard-hero h1,.attendance-card h1 { color:#111827 !important; }
+.dashboard-hero p:not(.role) { color:#667085 !important; }
+.role,.metric strong,.quick-card strong,.card h2 { color:#F04D34 !important; }
+.card,.metric,.quick-card,.member-welcome-card,.member-ai-zone,.ai-daily-coach,.member-progress-card,.attendance-card,.attendance-member-card,.dropdown-card,.admin-stat-grid span,.watch-summary,.action-subcard,.allocation-card {
+  color:#111827 !important;
+  border-color:#DBDEE5 !important;
+  background:#fff !important;
+  box-shadow:0 8px 24px rgba(17,24,39,.055) !important;
+}
+.card:hover,.metric:hover { border-color:#F04D34 !important; box-shadow:0 12px 28px rgba(17,24,39,.08) !important; }
+.card h3,.metric span,.quick-card span { color:#111827 !important; }
+.card p,.task-list,.schedule-list,.member-detail-row span,.member-glance-list span { color:#667085 !important; }
+.task-list li,.schedule-list li,.admin-manage-row,.admin-payment-row,.member-detail-row,.member-glance-list>div,.member-list-header { border-color:#DBDEE5 !important; background:#F9FAFB !important; }
+.dashboard-form input,.dashboard-form select,.dashboard-form textarea,.ai-chat-form input,.plan-edit-form input,.admin-payment-row select,.member-profile-form input { color:#111827 !important; border-color:#DBDEE5 !important; background:#fff !important; }
+.dashboard-form button,.pill-button,.wide-action,.ai-chat-form button,.daily-complete-button,.attendance-button,.plan-edit-form button,.member-profile-form button { color:#fff !important; border-color:#F04D34 !important; background:#F04D34 !important; box-shadow:none !important; }
+.daily-exercise-button,.ai-prompt-row button { color:#344054 !important; border-color:#DBDEE5 !important; background:#fff !important; }
+.daily-exercise-button.active { border-color:#F04D34 !important; color:#111827 !important; background:#FFF7F5 !important; box-shadow:inset 4px 0 #F04D34 !important; }
+.subscription-status { color:#667085 !important; border-color:#FFD4CB !important; background:#FFF7F5 !important; box-shadow:inset 3px 0 #F04D34 !important; }
+.attendance-member-row-card { color:#111827 !important; border-color:#DBDEE5 !important; background:#fff !important; }
+.attendance-day,.attendance-day.future { color:#667085 !important; border-color:#DBDEE5 !important; background:#F6F7F9 !important; }
+.attendance-day.present,.attendance-day.absent { color:#F04D34 !important; border-color:#FFD4CB !important; background:#FFF7F5 !important; }
+.progress-track,.daily-coach-progress { background:#E8EAF0 !important; }
+.progress-track b,.daily-coach-progress i,.ai-demo-timeline i { background:#F04D34 !important; }
+
+/* Dashboard typography missed by legacy expandable controls */
+details summary,.dropdown-card summary,.dropdown-heading,
+.admin-controls-card summary,.admin-column summary,.section-heading.dropdown-heading {
+  font-family: Outfit, Arial, sans-serif !important;
+  font-weight: 600 !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+}
+
+/* Dynamic member list expansion */
+.member-list-toggle-row {
+  display:flex !important;
+  justify-content:center !important;
+  padding:14px 0 0 !important;
+  border:0 !important;
+  background:transparent !important;
+}
+.member-list-toggle-row button {
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  gap:9px !important;
+  min-height:42px !important;
+  padding:0 18px !important;
+  border:1px solid #F04D34 !important;
+  border-radius:10px !important;
+  color:#F04D34 !important;
+  background:#FFF7F5 !important;
+  box-shadow:none !important;
+  font-family:Outfit,Arial,sans-serif !important;
+  font-size:13px !important;
+  font-weight:600 !important;
+  cursor:pointer !important;
+  transition:background .2s,color .2s,transform .2s !important;
+}
+.member-list-toggle-row button:hover {
+  color:#fff !important;
+  background:#F04D34 !important;
+  transform:translateY(-1px) !important;
+}
+
+@media(max-width:900px){.site-header nav{background:#fff !important;border-color:#DBDEE5 !important}.menu-button{color:#111827 !important}}
+
+/* Unified semi-bold emphasis */
+h1,h2,h3,h4,h5,h6,strong,b,
+.brand,.mini-logo,.plan-price,.metric strong,.quick-card strong,
+.auth-copy h1,.dashboard-hero h1,.attendance-card h1,.card h2,.card h3,.section-heading h2,
+.button,button,.site-header nav,.login-link,.role,.section-label,.plan-name,.popular-label,
+.auth-form label,.demo-credentials strong,.task-list strong,.member-glance-list strong {
+  font-weight: 600 !important;
+}
+/* Landing page aligned with the admin dashboard palette */
+body.landing-page{--bg:#f7f6f4;--alt:#f1eee9;--panel:#fff;--panel2:#fbfaf8;--text:#302a26;--muted:#88817b;--line:#e7e1dc;--orange:#ff7417;--orange2:#ff7417;--green:#ff7417;--green-2:#ff7417;background:#f7f6f4!important;color:#302a26!important}
+body.landing-page:before{background-image:radial-gradient(#ded7d0 1px,transparent 1px)!important}
+.landing-page .site-header,.landing-page .site-header.scrolled{color:#302a26!important;border-color:#e7e1dc!important;background:rgba(247,246,244,.92)!important}
+.landing-page .brand,.landing-page .site-header nav,.landing-page .login-link{color:#302a26!important}
+.landing-page .brand-logo-link{display:block;width:184px;height:56px;overflow:hidden;background:url("assets/ai-gym-logo-4k.png") left center/contain no-repeat}
+.landing-page .brand-logo-symbol,.landing-page .brand-logo-word{display:none}
+.landing-page .brand>span:last-child,.landing-page .brand span,.landing-page .rotating-word,.landing-page .section-heading h2 span,.landing-page .section-label{color:#ff7417!important}
+.landing-page .button,.landing-page .nav-cta,.landing-page .header-cta{border-color:#ff7417!important;background:#ff7417!important;color:#fff!important}
+.landing-page .button:hover{border-color:#e9650f!important;background:#e9650f!important}.landing-page .button-outline{border-color:#ff7417!important;background:transparent!important;color:#e9650f!important}
+.landing-page .hero,.landing-page .trusted,.landing-page .showcase,.landing-page .features,.landing-page .steps,.landing-page .pricing,.landing-page .faq-section,.landing-page .final-cta{background:#f7f6f4!important;color:#302a26!important}
+.landing-page .alternate,.landing-page .mobile-section,.landing-page .reviews,.landing-page .faq{background:#f1eee9!important;color:#302a26!important}
+.landing-page .hero-glow{background:radial-gradient(ellipse,rgba(255,116,23,.16),transparent 65%)!important}.landing-page .grid-bg{background-image:linear-gradient(rgba(48,42,38,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(48,42,38,.045) 1px,transparent 1px)!important}
+.landing-page .trust-pill{border-color:#ffc49f!important;background:#fff4ed!important;color:#e9650f!important}
+.landing-page .hero-content>p,.landing-page .section-heading p,.landing-page .integrations p,.landing-page .bento p,.landing-page .steps-grid p,.landing-page .final-cta p,.landing-page .microcopy{color:#88817b!important}
+.landing-page .dashboard-shell{border-color:#e7e1dc!important;background:#f7f6f4!important;color:#302a26!important;box-shadow:0 30px 80px rgba(48,42,38,.14)!important}.landing-page .dashboard-shell aside{background:#fff!important;color:#8e8882!important}.landing-page .dashboard-shell aside b,.landing-page .mini-brand{background:#ff7417!important;color:#fff!important}
+.landing-page .metric-grid>div,.landing-page .chart-card,.landing-page .integrations,.landing-page .integration-grid span,.landing-page .feature-tab,.landing-page .phone-chat,.landing-page .scanner,.landing-page .checkin-list,.landing-page .benefit-list,.landing-page .bento,.landing-page .steps-grid article,.landing-page .trial-banner,.landing-page .review-track article,.landing-page .pricing-grid article,.landing-page .faq-list details{border-color:#e7e1dc!important;background:#fff!important;color:#302a26!important;box-shadow:none!important}
+.landing-page .feature-tab.active{border-color:#ff7417!important;background:#fff4ed!important}.landing-page .feature-tab>i,.landing-page .steps-grid i,.landing-page .bento>i,.landing-page .benefit-list i{background:#fff0e6!important;color:#ff7417!important}.landing-page .feature-tab.active>i,.landing-page .feature-tab em{background:#ff7417!important;color:#fff!important}
+.landing-page .feature-tab small,.landing-page .bento p,.landing-page .review-track p,.landing-page .review-track small,.landing-page .pricing-grid article>p,.landing-page .pricing-grid li{color:#88817b!important}
+.landing-page .phone-chat,.landing-page .chat-body{background:#f7f6f4!important}.landing-page .chat-header{background:#302a26!important;color:#fff!important}.landing-page .bubble{border-color:#e7e1dc!important;background:#fff!important;color:#302a26!important}.landing-page .bubble.sent{background:#fff0e6!important;color:#302a26!important}
+.landing-page .checkin-list article,.landing-page .member-mini,.landing-page .money,.landing-page .stat-row span{background:#fbfaf8!important;color:#302a26!important}.landing-page .rings{border-color:#eee8e3!important;border-top-color:#ff7417!important}.landing-page .green-card{background:radial-gradient(circle at 80%,rgba(255,116,23,.12),transparent 16rem),#fff!important}
+.landing-page .billing-toggle{background:#ebe7e3!important}.landing-page .billing-toggle button{color:#716b67!important}.landing-page .billing-toggle button.active{background:#302a26!important;color:#fff!important}.landing-page .pricing-grid .popular{border-color:#ff7417!important;box-shadow:0 22px 55px rgba(48,42,38,.1)!important}.landing-page .popular-label,.landing-page .faq-list details[open] summary span{background:#ff7417!important;color:#fff!important}.landing-page .faq-list summary span{background:#eee9e5!important;color:#716b67!important}
+.landing-page footer{border-color:#443d38!important;background:#302a26!important;color:#fff!important}.landing-page footer .brand{color:#fff!important}.landing-page footer p,.landing-page footer>div,.landing-page footer>small{color:#c9c2bc!important}.landing-page .bottom-bar{border-color:rgba(255,255,255,.12)!important;background:rgba(48,42,38,.96)!important;color:#fff!important}
+.landing-page .footer-logo-link{display:inline-flex;width:auto;height:58px;overflow:hidden;background:transparent}
+@media(max-width:900px){.landing-page .site-header nav{border-color:#e7e1dc!important;background:#fff!important}.landing-page .menu-button{color:#302a26!important}}
+
+/* AI GYM brand palette — sampled from the production logo. */
+body.landing-page{--bg:#fff;--alt:#f6f7f9;--panel:#fff;--panel2:#f9fafb;--text:#0c1220;--muted:#667085;--line:#dfe3ea;--orange:#f33514;--orange2:#f33514;--green:#f33514;--green-2:#f33514;background:#fff!important;color:#0c1220!important}
+body.landing-page:before{background-image:radial-gradient(#dfe3ea 1px,transparent 1px)!important}
+.landing-page .site-header,.landing-page .site-header.scrolled{color:#0c1220!important;border-color:#dfe3ea!important;background:rgba(255,255,255,.94)!important}
+.landing-page .brand,.landing-page .site-header nav,.landing-page .login-link{color:#0c1220!important}
+.landing-page .brand>span:last-child,.landing-page .brand span,.landing-page .rotating-word,.landing-page .section-heading h2 span,.landing-page .section-label{color:#f33514!important}
+.landing-page .button,.landing-page .nav-cta,.landing-page .header-cta{border-color:#f33514!important;background:#f33514!important;color:#fff!important}.landing-page .button:hover{border-color:#d92d0f!important;background:#d92d0f!important}.landing-page .button-outline{border-color:#f33514!important;background:transparent!important;color:#d92d0f!important}
+.landing-page .hero,.landing-page .trusted,.landing-page .showcase,.landing-page .features,.landing-page .steps,.landing-page .pricing,.landing-page .faq-section,.landing-page .final-cta{background:#fff!important;color:#0c1220!important}.landing-page .alternate,.landing-page .mobile-section,.landing-page .reviews,.landing-page .faq{background:#f6f7f9!important;color:#0c1220!important}
+.landing-page .hero-glow{background:radial-gradient(ellipse,rgba(243,53,20,.14),transparent 65%)!important}.landing-page .trust-pill,.landing-page .feature-tab.active{border-color:#ffc8bc!important;background:#fff3ef!important;color:#d92d0f!important}
+.landing-page .hero-content>p,.landing-page .section-heading p,.landing-page .integrations p,.landing-page .bento p,.landing-page .steps-grid p,.landing-page .final-cta p,.landing-page .microcopy,.landing-page .feature-tab small,.landing-page .review-track p,.landing-page .review-track small,.landing-page .pricing-grid li{color:#667085!important}
+.landing-page .dashboard-shell{border-color:#dfe3ea!important;background:#fff!important;color:#0c1220!important;box-shadow:0 30px 80px rgba(12,18,32,.14)!important}.landing-page .dashboard-shell aside,.landing-page .chat-header{background:#0c1220!important;color:#fff!important}.landing-page .dashboard-shell aside b,.landing-page .mini-brand{background:#f33514!important;color:#fff!important}
+.landing-page .metric-grid>div,.landing-page .chart-card,.landing-page .integrations,.landing-page .integration-grid span,.landing-page .feature-tab,.landing-page .phone-chat,.landing-page .scanner,.landing-page .checkin-list,.landing-page .benefit-list,.landing-page .bento,.landing-page .steps-grid article,.landing-page .trial-banner,.landing-page .review-track article,.landing-page .pricing-grid article{border-color:#dfe3ea!important;background:#fff!important;color:#0c1220!important}
+.landing-page .feature-tab>i,.landing-page .steps-grid i,.landing-page .bento>i,.landing-page .benefit-list i{background:#fff0ec!important;color:#f33514!important}.landing-page .feature-tab.active>i,.landing-page .feature-tab em,.landing-page .popular-label,.landing-page .faq-list details[open] summary span{background:#f33514!important;color:#fff!important}
+.landing-page .phone-chat,.landing-page .chat-body{background:#f6f7f9!important}.landing-page .bubble{border-color:#dfe3ea!important;background:#fff!important;color:#0c1220!important}.landing-page .bubble.sent{border-color:#f33514!important;background:#f33514!important;color:#fff!important}
+.landing-page .pricing-grid .popular{border-color:#f33514!important;box-shadow:0 22px 55px rgba(12,18,32,.1)!important}.landing-page .rings{border-top-color:#f33514!important}
+.landing-page footer{border-color:#222b3c!important;background:#0c1220!important;color:#fff!important}.landing-page footer .brand{color:#fff!important}.landing-page footer p,.landing-page footer>div,.landing-page footer>small{color:#b8c0ce!important}.landing-page .bottom-bar{background:rgba(12,18,32,.96)!important;color:#fff!important}
+@media(max-width:900px){.landing-page .site-header nav{border-color:#dfe3ea!important;background:#fff!important}.landing-page .menu-button{color:#0c1220!important}}
+
+/* FAQ without a filled outer frame */
+.landing-page .faq-list,
+.landing-page .faq-list details{
+  background:transparent!important;
+  box-shadow:none!important;
+}
++
+
+/* Branded authentication photo and expanded gym footer */
+.auth-illustration{position:relative!important}
+.auth-photo-brand{position:absolute;z-index:8;top:28px;left:28px;display:flex;align-items:center;padding:10px 14px;border:1px solid rgba(255,255,255,.28);border-radius:14px;background:rgba(255,255,255,.92);box-shadow:0 12px 34px rgba(0,0,0,.2);backdrop-filter:blur(12px)}
+.auth-photo-brand img{display:block;width:150px;height:auto}
+.auth-photo-footer{position:absolute;z-index:8;right:28px;bottom:28px;left:28px;display:flex;flex-direction:column;gap:7px;padding:20px 22px;border:1px solid rgba(255,255,255,.18);border-radius:16px;color:#fff;background:linear-gradient(135deg,rgba(12,18,32,.9),rgba(12,18,32,.7));box-shadow:0 16px 38px rgba(0,0,0,.3);backdrop-filter:blur(12px)}
+.auth-photo-footer strong{font-size:1.15rem;letter-spacing:-.01em}.auth-photo-footer span{color:#f3f5f8;font-size:.88rem}.auth-photo-footer small{color:#f8a08c;font-size:.76rem;font-weight:700;letter-spacing:.02em}
+.landing-page .site-footer{display:grid!important;grid-template-columns:minmax(250px,1.45fr) repeat(3,minmax(150px,1fr))!important;gap:44px!important;align-items:start!important;padding-top:68px!important;padding-bottom:28px!important}
+.landing-page .site-footer>div{display:flex;flex-direction:column;align-items:flex-start;gap:12px}
+.landing-page .site-footer .footer-about{max-width:340px;gap:18px}.landing-page .site-footer .footer-about p{font-size:14px;line-height:1.75}
+.landing-page .site-footer .footer-column{font-size:13px;color:#b8c0ce!important}.landing-page .site-footer .footer-column strong{margin-bottom:5px;color:#fff;font-size:14px}.landing-page .site-footer .footer-column a,.landing-page .site-footer .footer-column span{color:#b8c0ce;line-height:1.5}.landing-page .site-footer .footer-column a{transition:color .2s}.landing-page .site-footer .footer-column a:hover{color:#f33514}
+.landing-page .site-footer .footer-bottom{grid-column:1/-1;display:flex!important;flex-direction:row!important;justify-content:space-between;width:100%;margin-top:20px;padding-top:24px;border-top:1px solid rgba(255,255,255,.12);color:#8993a4;font-size:12px}.landing-page .site-footer .footer-bottom small{color:#8993a4!important}
+@media(max-width:900px){.landing-page .site-footer{grid-template-columns:repeat(2,minmax(0,1fr))!important}.landing-page .site-footer .footer-about{max-width:none}.auth-photo-brand{top:20px;left:20px}.auth-photo-footer{right:20px;bottom:20px;left:20px}}
+@media(max-width:600px){.landing-page .site-footer{grid-template-columns:1fr!important;gap:30px!important}.landing-page .site-footer .footer-bottom{flex-direction:column!important;gap:8px}.auth-photo-brand{top:16px;left:16px}.auth-photo-brand img{width:126px}.auth-photo-footer{right:16px;bottom:16px;left:16px;padding:16px}.auth-photo-footer strong{font-size:1rem}}
+
+/* Restrained pricing-card interactions */
+.landing-page .pricing-grid article{position:relative;transform:translateY(0);transition:transform .28s ease,border-color .28s ease,box-shadow .28s ease!important;will-change:transform}
+.landing-page .pricing-grid article::before{content:none!important;display:none!important}
+.landing-page .pricing-grid article>*{position:relative;z-index:1}
+.landing-page .pricing-grid article:hover,.landing-page .pricing-grid article:focus-within{color:#0c1220!important;background:#fff!important}
+.landing-page .pricing-grid article:hover .plan-name,.landing-page .pricing-grid article:focus-within .plan-name{color:#8491a5!important}
+.landing-page .pricing-grid article:hover .plan-price,.landing-page .pricing-grid article:focus-within .plan-price{color:#0c1220!important}
+.landing-page .pricing-grid article:hover .plan-price small,.landing-page .pricing-grid article:focus-within .plan-price small,.landing-page .pricing-grid article:hover>p,.landing-page .pricing-grid article:focus-within>p,.landing-page .pricing-grid article:hover li,.landing-page .pricing-grid article:focus-within li{color:#667085!important;opacity:1!important;visibility:visible!important}
+.landing-page .pricing-grid article:hover .button-outline,.landing-page .pricing-grid article:focus-within .button-outline{color:#e43b1d!important;background:#fff!important}
+.landing-page .pricing-grid article:hover,.landing-page .pricing-grid article:focus-within{transform:translateY(-6px);border-color:#d8dde6!important;box-shadow:0 18px 45px rgba(12,18,32,.1)!important}
+.landing-page .pricing-grid article.popular{transform:scale(1.025);box-shadow:0 16px 44px rgba(243,53,20,.1)!important}
+.landing-page .pricing-grid article.popular:hover,.landing-page .pricing-grid article.popular:focus-within{transform:scale(1.025) translateY(-6px);box-shadow:0 22px 52px rgba(12,18,32,.12)!important}
+.landing-page .pricing-grid article .button{transition:background-color .25s ease,border-color .25s ease,color .25s ease,box-shadow .25s ease}
+.landing-page .pricing-grid article:hover .button,.landing-page .pricing-grid article:focus-within .button{box-shadow:0 8px 20px rgba(243,53,20,.14)}
+.landing-page .pricing-grid article .button{position:relative;z-index:2;opacity:1!important;visibility:visible!important;text-indent:0!important;font-size:14px!important}
+.landing-page .pricing-grid article.popular .button,.landing-page .pricing-grid article.popular:hover .button,.landing-page .pricing-grid article.popular:focus-within .button{color:#fff!important;-webkit-text-fill-color:#fff!important;background:#f33514!important}
+.landing-page .pricing-grid article:not(.popular) .button,.landing-page .pricing-grid article:not(.popular):hover .button,.landing-page .pricing-grid article:not(.popular):focus-within .button{color:#d92d0f!important;-webkit-text-fill-color:#d92d0f!important;background:#fff!important}
+@media(max-width:900px){.landing-page .pricing-grid article.popular{transform:none}.landing-page .pricing-grid article.popular:hover,.landing-page .pricing-grid article.popular:focus-within{transform:translateY(-4px)}}
+@media(prefers-reduced-motion:reduce){.landing-page .pricing-grid article,.landing-page .pricing-grid article::before{transition:none!important}.landing-page .pricing-grid article:hover,.landing-page .pricing-grid article:focus-within,.landing-page .pricing-grid article.popular:hover,.landing-page .pricing-grid article.popular:focus-within{transform:none}}
+
+/* Shared real-logo sizing. */
+.project-logo{display:inline-flex!important;align-items:center!important;background:transparent!important}.project-logo img{display:block;width:172px;max-width:100%;height:auto}.attendance-brand img{width:180px}.mini-logo.project-logo img{width:172px}.landing-page .mini-brand,.landing-page .chat-logo{overflow:hidden!important;background:#fff url("assets/ai-gym-emblem-4k.png") center/32px 32px no-repeat!important}.landing-page .mini-brand{width:42px!important;height:42px!important;border-radius:12px!important}.landing-page .chat-logo{width:44px!important;height:44px!important;border-radius:14px!important;flex:0 0 44px}.landing-page .mini-brand img,.landing-page .chat-logo img{display:none}
+
+.portal-attendance-overview{margin:22px 0}.portal-attendance-status{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:24px;border:1px solid #e4e7ec;border-radius:18px;background:#fff}.portal-attendance-status>div:first-child{display:flex;flex-direction:column;gap:7px}.portal-attendance-status span,.portal-attendance-status small{color:#667085}.portal-attendance-status strong{color:#0c1220;font-size:25px}.portal-attendance-status .attendance-action-row{margin:0}.portal-attendance-kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:14px}.portal-attendance-kpis>div{display:flex;flex-direction:column;gap:6px;padding:20px;border:1px solid #e4e7ec;border-radius:16px;background:#fff}.portal-attendance-kpis strong{color:#f33514;font-size:27px}.portal-attendance-kpis span{color:#667085}@media(max-width:700px){.portal-attendance-status{align-items:stretch;flex-direction:column}.portal-attendance-status .attendance-action-row{width:100%}.portal-attendance-status .attendance-action-row button{flex:1}.portal-attendance-kpis{grid-template-columns:1fr}}

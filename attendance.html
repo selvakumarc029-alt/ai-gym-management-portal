@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Attendance Check-in | AI Gym</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800;900&family=Barlow+Condensed:wght@700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="dashboard.css?v=87">
+  <link rel="stylesheet" href="portal-theme.css?v=1">
+  <link rel="stylesheet" href="final-design.css?v=2">
+</head>
+<body>
+  <main class="attendance-shell">
+    <section class="attendance-card">
+      <a class="attendance-brand project-logo" href="index.html" aria-label="AI GYM home"><img src="assets/ai-gym-logo-4k.png" alt="AI GYM"></a>
+      <p class="role">Attendance portal</p>
+      <h1>Mark Gym Attendance</h1>
+      <p id="attendanceIntro">Loading member check-in...</p>
+
+      <div class="attendance-member-card">
+        <span>Member ID</span>
+        <strong id="attendanceMemberId">-</strong>
+      </div>
+
+      <section class="portal-attendance-overview" aria-label="Today's attendance overview">
+        <div class="portal-attendance-status">
+          <div><span>Today's status</span><strong id="portalAttendanceStatus">Not checked in</strong><small id="portalAttendanceTime">Mark your arrival to begin</small></div>
+          <div class="attendance-action-row">
+            <button class="wide-action attendance-button" id="markAttendanceButton" type="button">Check in</button>
+            <button class="wide-action attendance-button secondary-attendance-button" id="checkoutButton" type="button">Check out</button>
+          </div>
+        </div>
+        <div class="portal-attendance-kpis">
+          <div><strong id="portalPresentCount">0</strong><span>Present this month</span></div>
+          <div><strong id="portalAbsentCount">0</strong><span>Absent this month</span></div>
+          <div><strong id="portalCompletedCount">0</strong><span>Completed shifts</span></div>
+        </div>
+      </section>
+      <p class="attendance-message" id="attendanceMessage" aria-live="polite"></p>
+      <a class="attendance-back-link" href="member-dashboard.html">Back to dashboard</a>
+    </section>
+  </main>
+  <script src="attendance.js?v=4"></script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trainer Dashboard | AI Gym</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800;900&family=Barlow+Condensed:wght@700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="dashboard.css?v=113">
+  <link rel="stylesheet" href="portal-theme.css?v=1">
+  <link rel="stylesheet" href="final-design.css?v=1">
+  <link rel="stylesheet" href="role-reference.css?v=39">
+  <link rel="stylesheet" href="invoice-layout.css?v=1">
+</head>
+<body class="role-reference-body">
+  <main class="dashboard-shell role-reference-app" data-dashboard-role="trainer">
+    <aside class="dashboard-sidebar role-sidebar" aria-label="Trainer navigation">
+      <a class="sidebar-logo" href="index.html" aria-label="AI Gym home">A</a>
+      <button class="sidebar-collapse-toggle" type="button" aria-label="Collapse sidebar" aria-expanded="true"><span aria-hidden="true">&times;</span></button>
+      <nav>
+        <a class="active" href="#overview" data-role-view="overview">Overview</a>
+        <a href="#schedule" data-role-view="schedule">Schedule</a>
+        <a href="#members" data-role-view="members">Members</a>
+        <a href="#workouts" data-role-view="workouts">Workouts</a>
+        <a href="#progress" data-role-view="progress">Progress</a>
+        <a href="#attendance" data-role-view="attendance">Attendance</a>
+        <a href="#invoices" data-role-view="invoices">Invoices</a>
+        <a href="#messages" data-role-view="messages">Messages</a>
+      </nav>
+      <a class="role-sidebar-logout" href="login.html" aria-label="Logout"><span>Logout</span></a>
+    </aside>
+    <div class="dashboard-content role-content">
+    <header class="dashboard-topbar role-utility-bar">
+      <div><small>WELCOME BACK</small><strong>Trainer workspace</strong></div>
+      <label class="role-global-search"><span>⌕</span><input type="search" placeholder="Search your workspace" aria-label="Search trainer workspace"></label>
+    </header>
+    <section class="metric-grid metric-grid-with-quick role-view-panel active trainer-kpis-first" data-role-panel="overview">
+      <article class="quick-card"><strong data-quick-value>0</strong><span data-quick-label>Live metric</span></article>
+      <div data-metrics class="metric-grid-inner"></div>
+    </section>
+    <section class="dashboard-hero stacked-hero role-view-panel active" id="overview" data-role-panel="overview">
+      <div>
+        <p class="role">Trainer dashboard</p>
+        <h1>Coach sessions and member progress</h1>
+        <p>Track classes, assigned members, workout plans, and progress notes for every session.</p>
+      </div>
+    </section>
+    <section class="dashboard-grid trainer-workbench-grid" id="schedule">
+      <article class="card role-view-panel" data-role-panel="schedule"><h2 data-list-title>Schedule</h2><ul class="task-list" data-primary-list></ul></article>
+      <article class="card role-view-panel" id="workouts" data-role-panel="workouts"><h2>Assign Workout</h2><div data-trainer-assign></div></article>
+      <article class="card role-view-panel" data-role-panel="workouts"><h2>Complete Session</h2><div data-trainer-complete></div></article>
+    </section>
+    <section class="dashboard-grid trainer-attendance-workspace">
+      <article class="card attendance-wide-card role-view-panel" id="attendance" data-role-panel="attendance"><h2>My Attendance</h2><div data-trainer-qr-attendance></div><div data-trainer-calendar-history></div></article>
+    </section>
+    <section class="dashboard-grid trainer-coach-grid">
+      <article class="card role-view-panel" id="members" data-role-panel="members"><h2>Assigned Members</h2><div data-trainer-members></div></article>
+      <article class="card role-view-panel active" data-role-panel="overview"><h2>Coach Focus</h2><div data-trainer-focus></div></article>
+      <article class="card role-view-panel active trainer-live-activity" data-role-panel="overview"><h2>Live Activity</h2><ul class="task-list" data-activity-list></ul></article>
+    </section>
+    <section class="dashboard-grid trainer-coach-grid">
+      <article class="card role-view-panel" data-role-panel="workouts"><h2>Diet Assignment</h2><div data-trainer-diet></div></article>
+      <article class="card role-view-panel" id="progress" data-role-panel="progress"><h2>Progress Tracking</h2><div data-trainer-progress></div></article>
+    </section>
+    <section class="dashboard-grid trainer-coach-grid">
+      <article class="card attendance-wide-card role-view-panel" data-role-panel="progress"><h2>Member Attendance</h2><div data-trainer-attendance></div></article>
+      <article class="card role-view-panel" id="messages" data-role-panel="messages"><h2>Messages</h2><div data-trainer-messages></div></article>
+    </section>
+    <section class="dashboard-grid" id="invoices">
+      <article class="card role-view-panel" data-role-panel="invoices"><h2>Invoices from Gym Admin</h2><div data-trainer-invoices></div></article>
+    </section>
+    </div>
+  </main>
+  <script src="dashboard.js?v=81"></script>
+</body>
+</html>

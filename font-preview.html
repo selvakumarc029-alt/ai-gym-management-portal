@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Gym Font Preview</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;600;800&family=Archivo+Black&family=Barlow:wght@400;600;800&family=Barlow+Condensed:wght@700;800&family=Bebas+Neue&family=Inter:wght@400;600;800&family=League+Spartan:wght@700;900&family=Manrope:wght@400;600;800&family=Montserrat:wght@400;600;800&family=Oswald:wght@700&family=Poppins:wght@400;600;800&family=Rajdhani:wght@500;700&family=Sora:wght@400;600;800&family=Teko:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #050505;
+      --panel: #12100c;
+      --line: rgba(212, 175, 55, 0.28);
+      --gold: #d4af37;
+      --text: #ffffff;
+      --muted: rgba(255, 255, 255, 0.72);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: radial-gradient(circle at 80% 0%, rgba(212, 175, 55, 0.18), transparent 20rem), var(--bg);
+      color: var(--text);
+      font-family: Inter, Arial, sans-serif;
+    }
+
+    main {
+      width: min(1180px, calc(100% - 36px));
+      margin: 0 auto;
+      padding: 36px 0;
+    }
+
+    .top {
+      margin-bottom: 24px;
+    }
+
+    .top p {
+      margin: 0;
+      color: var(--gold);
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .top h1 {
+      margin: 0.35rem 0 0;
+      font-family: Anton, Impact, sans-serif;
+      font-size: clamp(2.6rem, 6vw, 5rem);
+      line-height: 0.95;
+      text-transform: uppercase;
+    }
+
+    .font-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .font-card {
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.025));
+      padding: 20px;
+    }
+
+    .font-name {
+      margin: 0 0 14px;
+      color: var(--gold);
+      font: 900 0.88rem Inter, sans-serif;
+      text-transform: uppercase;
+    }
+
+    .sample-heading {
+      margin: 0;
+      font-size: clamp(2.2rem, 4.4vw, 4rem);
+      line-height: 0.95;
+      text-transform: uppercase;
+      letter-spacing: 0;
+    }
+
+    .sample-copy {
+      margin: 14px 0 0;
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.55;
+    }
+
+    .sample-pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .sample-pill {
+      border: 1px solid var(--line);
+      padding: 0.45rem 0.7rem;
+      color: var(--text);
+      font-size: 0.85rem;
+      font-weight: 800;
+    }
+
+    .bebas .sample-heading { font-family: "Bebas Neue", sans-serif; }
+    .bebas .sample-copy, .bebas .sample-pill { font-family: Inter, sans-serif; }
+
+    .anton .sample-heading { font-family: Anton, sans-serif; }
+    .anton .sample-copy, .anton .sample-pill { font-family: Poppins, sans-serif; }
+
+    .oswald .sample-heading { font-family: Oswald, sans-serif; }
+    .oswald .sample-copy, .oswald .sample-pill { font-family: Montserrat, sans-serif; }
+
+    .teko .sample-heading { font-family: Teko, sans-serif; }
+    .teko .sample-copy, .teko .sample-pill { font-family: Rajdhani, sans-serif; }
+
+    .barlow .sample-heading { font-family: "Barlow Condensed", sans-serif; }
+    .barlow .sample-copy, .barlow .sample-pill { font-family: Barlow, sans-serif; }
+
+    .spartan .sample-heading { font-family: "League Spartan", sans-serif; }
+    .spartan .sample-copy, .spartan .sample-pill { font-family: Manrope, sans-serif; }
+
+    .archivo .sample-heading { font-family: "Archivo Black", sans-serif; }
+    .archivo .sample-copy, .archivo .sample-pill { font-family: Archivo, sans-serif; }
+
+    .sora .sample-heading,
+    .sora .sample-copy,
+    .sora .sample-pill { font-family: Sora, sans-serif; }
+
+    @media (max-width: 780px) {
+      .font-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="top">
+      <p>Font preview</p>
+      <h1>Choose your AI gym style</h1>
+    </section>
+
+    <section class="font-grid">
+      <article class="font-card bebas">
+        <p class="font-name">1. Bebas Neue + Inter</p>
+        <h2 class="sample-heading">Gym Operations</h2>
+        <p class="sample-copy">Manage members, workouts, diet plans, renewals, and trainer schedules from one premium dashboard.</p>
+        <div class="sample-pill-row"><span class="sample-pill">Active Members</span><span class="sample-pill">AI Coach</span></div>
+      </article>
+
+      <article class="font-card anton">
+        <p class="font-name">2. Anton + Poppins</p>
+        <h2 class="sample-heading">Stronger Results</h2>
+        <p class="sample-copy">A bold gym-poster heading style with smooth readable dashboard text for daily use.</p>
+        <div class="sample-pill-row"><span class="sample-pill">Workout Plan</span><span class="sample-pill">Trainer Tools</span></div>
+      </article>
+
+      <article class="font-card oswald">
+        <p class="font-name">3. Oswald + Montserrat</p>
+        <h2 class="sample-heading">Member Progress</h2>
+        <p class="sample-copy">Sporty, professional, and balanced. Good for dashboards, reports, and membership screens.</p>
+        <div class="sample-pill-row"><span class="sample-pill">Attendance</span><span class="sample-pill">Renewals</span></div>
+      </article>
+
+      <article class="font-card teko">
+        <p class="font-name">4. Teko + Rajdhani</p>
+        <h2 class="sample-heading">AI Fitness Engine</h2>
+        <p class="sample-copy">Sharp, futuristic, and technical. Best if you want the project to feel more AI-powered.</p>
+        <div class="sample-pill-row"><span class="sample-pill">Live AI</span><span class="sample-pill">Smart Diet</span></div>
+      </article>
+
+      <article class="font-card barlow">
+        <p class="font-name">5. Barlow Condensed + Barlow</p>
+        <h2 class="sample-heading">Premium Training</h2>
+        <p class="sample-copy">Clean fitness-brand styling with a premium look and very readable body text.</p>
+        <div class="sample-pill-row"><span class="sample-pill">Elite Plan</span><span class="sample-pill">Coach Notes</span></div>
+      </article>
+
+      <article class="font-card spartan">
+        <p class="font-name">6. League Spartan + Manrope</p>
+        <h2 class="sample-heading">Command Center</h2>
+        <p class="sample-copy">Modern, bold, and high-end. A strong option for a polished product-style gym portal.</p>
+        <div class="sample-pill-row"><span class="sample-pill">Admin</span><span class="sample-pill">Dashboard</span></div>
+      </article>
+
+      <article class="font-card archivo">
+        <p class="font-name">7. Archivo Black + Archivo</p>
+        <h2 class="sample-heading">Power System</h2>
+        <p class="sample-copy">Heavy and powerful. Works well when you want the brand to look intense and direct.</p>
+        <div class="sample-pill-row"><span class="sample-pill">Strength</span><span class="sample-pill">Performance</span></div>
+      </article>
+
+      <article class="font-card sora">
+        <p class="font-name">8. Sora</p>
+        <h2 class="sample-heading">Smart Gym Portal</h2>
+        <p class="sample-copy">One clean modern AI/tech font across the whole product, softer than the gym-poster styles.</p>
+        <div class="sample-pill-row"><span class="sample-pill">AI Assistant</span><span class="sample-pill">Plans</span></div>
+      </article>
+    </section>
+  </main>
+</body>
+</html>

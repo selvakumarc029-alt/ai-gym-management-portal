@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Activate Free Trial | AI Gym</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="subscription-checkout.css?v=1">
+  <link rel="stylesheet" href="payment-logos.css?v=1">
+</head>
+<body>
+  <main class="checkout-shell">
+    <section class="checkout-card">
+      <a class="checkout-logo" href="index.html"><img src="assets/ai-gym-logo-4k.png" alt="AI GYM"></a>
+      <p class="eyebrow">SECURE SUBSCRIPTION ACTIVATION</p>
+      <h1>Scan to continue</h1>
+      <p class="intro">Use your preferred UPI app, then confirm below to activate your seven-day free trial.</p>
+      <div class="qr-frame"><img id="subscriptionQr" alt="UPI subscription QR code"></div>
+      <div class="upi-apps" aria-label="Supported UPI apps">
+        <a class="upi-link" href="upi://pay?pa=aigym@upi&amp;pn=AI%20Gym"><i><img src="assets/gpay-logo.svg" alt="Google Pay"></i><span>GPay</span></a>
+        <a class="upi-link" href="upi://pay?pa=aigym@upi&amp;pn=AI%20Gym"><i><img src="assets/paytm-logo.svg" alt="Paytm"></i><span>Paytm</span></a>
+        <a class="upi-link" href="upi://pay?pa=aigym@upi&amp;pn=AI%20Gym"><i><img src="assets/bhim-logo.svg" alt="BHIM"></i><span>BHIM</span></a>
+        <a class="upi-link" href="upi://pay?pa=aigym@upi&amp;pn=AI%20Gym"><i><img src="assets/phonepe-logo.svg" alt="PhonePe"></i><span>PhonePe</span></a>
+      </div>
+      <div class="trial-note"><strong>7 days free</strong><span>Your workspace will be blocked automatically when the trial ends unless a paid subscription is activated.</span></div>
+      <p class="checkout-message" id="checkoutMessage" aria-live="polite"></p>
+      <button id="confirmPayment" type="button">I have completed payment</button>
+      <small class="gateway-note">Local checkout confirmation. Production payment verification requires merchant gateway credentials.</small>
+    </section>
+  </main>
+  <script src="subscription-checkout.js?v=1"></script>
+</body>
+</html>

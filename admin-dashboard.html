@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <title>Admin Dashboard | AI Gym</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="dashboard.css?v=122">
+  <link rel="stylesheet" href="portal-theme.css?v=1">
+  <link rel="stylesheet" href="final-design.css?v=1">
+  <link rel="stylesheet" href="admin-reference.css?v=51">
+  <link rel="stylesheet" href="invoice-layout.css?v=1">
+</head>
+<body class="admin-reference-body">
+  <main class="admin-app dashboard-shell" data-dashboard-role="admin">
+    <aside class="admin-sidebar">
+      <a class="admin-logo" href="index.html" aria-label="AI Gym home">A</a>
+      <button class="sidebar-collapse-toggle" type="button" aria-label="Collapse sidebar" aria-expanded="true"><span aria-hidden="true">&times;</span></button>
+      <nav aria-label="Admin navigation">
+        <button class="active" type="button" data-admin-view="overview" title="Overview"><span>⌂</span><small>Overview</small></button>
+        <button type="button" data-admin-view="members" title="Members"><span>♙</span><small>Members</small></button>
+        <button type="button" data-admin-view="trainers" title="Trainers"><span>♧</span><small>Trainers</small></button>
+        <button type="button" data-admin-view="attendance" title="Attendance"><span>◫</span><small>Attendance</small></button>
+        <button type="button" data-admin-view="billing" title="Billing"><span>₹</span><small>Billing</small></button>
+        <button type="button" data-admin-view="operations" title="Operations"><span>⚙</span><small>Operations</small></button>
+      </nav>
+      <div class="admin-sidebar-bottom">
+        <button type="button" data-admin-help title="Help"><span>?</span><small>Help</small></button>
+        <a class="admin-sidebar-logout" href="login.html" title="Logout" aria-label="Logout"><span aria-hidden="true"></span><small>Logout</small></a>
+      </div>
+    </aside>
+
+    <div class="admin-workspace">
+      <header class="admin-utility-bar">
+        <div>
+          <span class="admin-mobile-logo">A</span>
+          <h1>Welcome Back!</h1>
+        </div>
+        <label class="admin-search"><span>⌕</span><input type="search" placeholder="Search members, trainers or payments" data-admin-global-search></label>
+      </header>
+
+      <div class="admin-page active" data-admin-page="overview">
+        <section class="metric-grid metric-grid-with-quick admin-kpi-grid">
+          <article class="quick-card"><strong data-quick-value>0</strong><span data-quick-label>Live metric</span></article>
+          <div data-metrics class="metric-grid-inner"></div>
+        </section>
+        <section class="admin-overview-grid">
+          <article class="admin-revenue-card">
+            <div class="admin-card-heading">
+              <div><h2>Total Revenue</h2><p>Keep an eye on the total income generated</p></div>
+              <div><select aria-label="Revenue period"><option>This Year</option><option>This Month</option></select><button type="button" aria-label="Export revenue">⇧</button></div>
+            </div>
+            <div class="admin-revenue-visual">
+              <strong data-admin-total-revenue>INR 0</strong>
+              <div class="admin-bars" aria-label="Six month revenue chart">
+                <span style="--bar:48%"><i>Jul</i></span><span style="--bar:70%"><i>Aug</i></span><span style="--bar:60%"><i>Sep</i></span><span style="--bar:42%"><i>Oct</i></span><span class="highlight" style="--bar:88%"><em>85%</em><i>Nov</i></span><span style="--bar:42%"><i>Dec</i></span>
+              </div>
+            </div>
+          </article>
+          <aside class="admin-quick-actions">
+            <h2>Manage Your<br>Fitness Business</h2>
+            <button type="button" data-admin-view="members">＋ New Member</button>
+            <button class="outline" type="button" data-admin-view="trainers">Manage Trainers</button>
+          </aside>
+        </section>
+
+        <section class="admin-overview-bottom">
+          <article class="admin-summary-card">
+            <div class="admin-card-heading"><div><h2>Recently Added</h2><p>Latest members registered in the portal</p></div><button type="button" data-admin-view="members">View All</button></div>
+            <div class="admin-recent-avatars" data-admin-recent-members></div>
+          </article>
+          <article class="admin-summary-card">
+            <div class="admin-card-heading"><div><h2>Attendance Retention</h2><p>Member attendance consistency</p></div><strong data-admin-retention>0%</strong></div>
+            <div class="admin-retention-line"><i></i></div>
+          </article>
+          <article class="admin-summary-card admin-checkins">
+            <div class="admin-card-heading"><h2>Recently Checked In</h2><button type="button" data-admin-view="attendance">View All</button></div>
+            <div data-admin-recent-checkins></div>
+          </article>
+        </section>
+      </div>
+
+      <div class="admin-page" data-admin-page="members">
+        <header class="admin-page-title"><div><h2>Member List</h2><p>Members <span>›</span> Member List</p></div><button type="button" data-open-admin-section="member-management">＋ New Member</button></header>
+        <section class="admin-member-toolbar"><label><span>⌕</span><input type="search" placeholder="Search members" data-member-filter></label><button type="button" data-member-filter-button>Go</button></section>
+        <article class="card admin-members-card"><h2 data-list-title>Members</h2><ul class="task-list" data-primary-list></ul></article>
+        <div id="member-management" data-admin-member-form></div>
+      </div>
+
+      <div class="admin-page" data-admin-page="trainers">
+        <header class="admin-page-title"><div><h2>Trainer Management</h2><p>Trainers <span>›</span> Manage trainers and allocation</p></div></header>
+        <div class="admin-focus-grid"><div data-admin-trainer-form></div><div data-admin-trainer-allocation></div></div>
+      </div>
+
+      <div class="admin-page" data-admin-page="attendance">
+        <header class="admin-page-title"><div><h2>Attendance</h2><p>Operations <span>›</span> Member check-ins</p></div></header>
+        <div data-admin-attendance></div>
+      </div>
+
+      <div class="admin-page" data-admin-page="billing">
+        <header class="admin-page-title"><div><h2>Billing & Subscriptions</h2><p>Finance <span>›</span> Revenue and payment management</p></div></header>
+        <div data-admin-plan-editor></div>
+        <div class="admin-focus-grid">
+          <article class="card"><h2>Subscription</h2><div data-subscription-panel></div></article>
+          <div data-admin-payments></div>
+        </div>
+        <div data-admin-invoices></div>
+        <div data-platform-invoices></div>
+      </div>
+
+      <div class="admin-page" data-admin-page="operations">
+        <header class="admin-page-title"><div><h2>Operations</h2><p>Admin <span>›</span> Tools and insights</p></div></header>
+        <div class="admin-focus-grid">
+          <div class="admin-operations-column">
+            <div data-admin-watch></div>
+            <div data-admin-insights></div>
+            <article class="card admin-live-activity-card"><h2>Live Activity</h2><ul class="task-list" data-activity-list></ul></article>
+          </div>
+          <div class="admin-operations-column">
+            <div data-admin-libraries></div>
+            <div data-admin-ai-reports></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="dashboard.js?v=78"></script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | AI Gym Management Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800;900&family=Barlow+Condensed:wght@700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="auth.css?v=13">
+  <link rel="stylesheet" href="portal-theme.css?v=1">
+  <link rel="stylesheet" href="final-design.css?v=10">
+  <link rel="stylesheet" href="login-layout.css?v=1">
+</head>
+<body>
+  <main class="auth-shell">
+    <section class="auth-card register-card login-card" aria-labelledby="login-title">
+      <div class="auth-panel">
+        <a class="mini-logo bodybuilding-logo" href="index.html" aria-label="AI GYM home">
+          <img src="assets/ai-gym-logo-4k.png" alt="AI GYM logo">
+        </a>
+        <div class="orb orb-one"></div>
+        <div class="orb orb-two"></div>
+        <div class="tilt-shape"></div>
+        <div class="auth-copy">
+          <p class="auth-kicker">Member access</p>
+          <h1 id="login-title">Welcome Back</h1>
+          <p>To keep connected with your gym, please login with your personal info.</p>
+          <form class="auth-form" id="loginForm">
+            <label>
+              Email
+              <input id="loginEmail" type="email" placeholder="your@email.com" autocomplete="username" required>
+            </label>
+            <label>
+              Password
+              <input id="loginPassword" type="password" placeholder="Your password" autocomplete="current-password" required>
+            </label>
+            <div class="form-row">
+              <label class="check-line"><input type="checkbox"> Remember me</label>
+              <a href="register.html">New member?</a>
+            </div>
+            <p class="login-message" id="loginMessage" aria-live="polite"></p>
+            <button type="submit">Sign In</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="auth-illustration">
+        <div class="track-ring"></div>
+        <div class="spark spark-one"></div>
+        <div class="spark spark-two"></div>
+        <div class="spark spark-three"></div>
+        <div class="plate-icon plate-one"></div>
+        <div class="plate-icon plate-two"></div>
+        <div class="ticket-shape ticket-one"></div>
+        <div class="ticket-shape ticket-two"></div>
+        <div class="camera-tripod">
+          <div class="camera-head">
+            <span></span><span></span>
+          </div>
+          <div class="camera-lens"></div>
+          <div class="leg left"></div>
+          <div class="leg right"></div>
+          <div class="leg center"></div>
+        </div>
+        <div class="trainer">
+          <div class="cap"></div>
+          <div class="head"></div>
+          <div class="torso"></div>
+          <div class="arm arm-left"></div>
+          <div class="arm arm-right"></div>
+          <div class="leg leg-left"></div>
+          <div class="leg leg-right"></div>
+          <div class="shoe shoe-left"></div>
+          <div class="shoe shoe-right"></div>
+        </div>
+        <div class="dumbbell-art"></div>
+      </div>
+    </section>
+  </main>
+  <script src="auth.js"></script>
+</body>
+</html>
