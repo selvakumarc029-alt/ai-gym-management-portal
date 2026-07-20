@@ -543,7 +543,27 @@ async function handleApi(request, response, pathname) {
   if (request.method === "GET" && pathname === "/api/me") {
     const session = requireSession(request, response, db); if (!session) return;
     const tenant = tenantFor(session, db);
-    return sendJson(response, 200, { email: session.user.email, name: session.user.name, role: session.user.role, tenantId: tenant?.id || null, tenantName: tenant?.name || "AI Gym SaaS" });
+    return sendJson(response, 200, { email: session.user.email, name: session.user.name, role: session.user.role, phone: session.user.phone || "", address: session.user.address || "", bio: session.user.bio || "", photo: session.user.photo || "", tenantId: tenant?.id || null, tenantName: tenant?.name || "AI Gym SaaS" });
+  }
+
+  if (request.method === "POST" && pathname === "/api/profile") {
+    const session = requireSession(request, response, db); if (!session) return;
+    const body = await readBody(request);
+    const name = String(body.name || "").trim();
+    if (!name) return sendJson(response, 400, { message: "Name is required." });
+    const previousName = session.user.name;
+    session.user.name = name;
+    session.user.phone = String(body.phone || "").trim();
+    session.user.address = String(body.address || "").trim();
+    session.user.bio = String(body.bio || "").trim();
+    if (String(body.photo || "").startsWith("data:image/")) session.user.photo = String(body.photo);
+    const tenant = tenantFor(session, db);
+    if (tenant && session.user.role === "trainer") {
+      const trainer = tenant.state.trainers.find((item) => item.email === session.user.email || item.name === previousName);
+      if (trainer) { trainer.name = name; trainer.email = session.user.email; trainer.phone = session.user.phone; trainer.address = session.user.address; trainer.bio = session.user.bio; if (session.user.photo) trainer.photo = session.user.photo; }
+    }
+    writeDatabase(db);
+    return sendJson(response, 200, { email: session.user.email, name, role: session.user.role, phone: session.user.phone, address: session.user.address, bio: session.user.bio, photo: session.user.photo || "", tenantId: tenant?.id || null, tenantName: tenant?.name || "AI Gym SaaS" });
   }
 
   if (pathname === "/api/super-admin/overview" && request.method === "GET") {
