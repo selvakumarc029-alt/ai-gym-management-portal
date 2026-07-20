@@ -10,8 +10,7 @@ let adminAttendanceMemberId = "";
 let adminAttendanceTrainerId = "";
 let memberAssistantShouldRemainOpen = false;
 let platformInvoices = [];
-const dynamicAppOrigin = window.location.port === "5600" ? window.location.origin : "http://localhost:5600";
-const apiBaseUrl = window.location.port === "5600" ? "" : dynamicAppOrigin;
+const apiBaseUrl = window.location.protocol === "file:" ? "http://localhost:5600" : "";
 
 const defaultPlans = [
   { name: "Basic", duration: "1 Month", price: 999, label: "Attendance + membership" },
@@ -2720,19 +2719,24 @@ function bindActions(role, state) {
           window.alert("The passwords do not match.");
           return;
         }
-        const response = await fetch(`${apiBaseUrl}/api/admin/members`, {
-          method: "POST",
-          headers: { "Content-Type": "application/json", "Authorization": `Bearer ${currentUser()?.token || ""}` },
-          body: JSON.stringify({ name: data.name, email: data.email, password: data.password, trainerId: data.trainerId, plan: data.plan })
-        });
-        const result = await response.json().catch(() => ({}));
-        if (!response.ok) {
-          window.alert(result.message || "Unable to add this member.");
-          return;
+        try {
+          const response = await fetch(`${apiBaseUrl}/api/admin/members`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json", "Authorization": `Bearer ${currentUser()?.token || ""}` },
+            body: JSON.stringify({ name: data.name, email: data.email, password: data.password, trainerId: data.trainerId, plan: data.plan })
+          });
+          const result = await response.json().catch(() => ({}));
+          if (!response.ok) {
+            window.alert(result.message || "Unable to add this member.");
+            return;
+          }
+          localStorage.setItem(storageKey, JSON.stringify(result.state));
+          window.alert(`${result.member.name} was added and can now sign in with ${result.member.email}.`);
+          renderDashboard();
+        } catch (error) {
+          window.alert("Unable to reach the server. Please refresh the dashboard and try again.");
+          console.error("Add member failed", error);
         }
-        localStorage.setItem(storageKey, JSON.stringify(result.state));
-        window.alert(`${result.member.name} was added and can now sign in with ${result.member.email}.`);
-        renderDashboard();
         return;
       }
 
@@ -3006,18 +3010,23 @@ function bindActions(role, state) {
       if (button.dataset.action === "removeMember") {
         const member = state.members.find((item) => item.id === button.dataset.id);
         if (!member || !window.confirm(`Remove ${member.name} and all linked records?`)) return;
-        const response = await fetch(`${apiBaseUrl}/api/admin/member-delete`, {
-          method: "POST",
-          headers: { "Content-Type": "application/json", "Authorization": `Bearer ${currentUser()?.token || ""}` },
-          body: JSON.stringify({ memberId: member.id })
-        });
-        const result = await response.json().catch(() => ({}));
-        if (!response.ok) {
-          window.alert(result.message || "Unable to remove this member.");
-          return;
+        try {
+          const response = await fetch(`${apiBaseUrl}/api/admin/member-delete`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json", "Authorization": `Bearer ${currentUser()?.token || ""}` },
+            body: JSON.stringify({ memberId: member.id })
+          });
+          const result = await response.json().catch(() => ({}));
+          if (!response.ok) {
+            window.alert(result.message || "Unable to remove this member.");
+            return;
+          }
+          localStorage.setItem(storageKey, JSON.stringify(result.state));
+          renderDashboard();
+        } catch (error) {
+          window.alert("Unable to reach the server. Please refresh the dashboard and try again.");
+          console.error("Remove member failed", error);
         }
-        localStorage.setItem(storageKey, JSON.stringify(result.state));
-        renderDashboard();
         return;
       }
 
