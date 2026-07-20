@@ -671,6 +671,8 @@ function renderAdminMemberForm(state) {
       <form class="dashboard-form" data-action="addMember">
         <label>Member name<input name="name" placeholder="Example: Kavin R." required></label>
         <label>Email<input name="email" type="email" placeholder="kavin@aigym.com" required></label>
+        <label>Login password<input name="password" type="password" minlength="8" autocomplete="new-password" placeholder="Minimum 8 characters" required></label>
+        <label>Confirm password<input name="confirmPassword" type="password" minlength="8" autocomplete="new-password" placeholder="Enter the password again" required></label>
         <label>Assign trainer<select name="trainerId">${renderTrainerOptions(state)}</select></label>
         <label>Subscription<select name="plan">${renderPlanOptions(state, "Basic")}</select></label>
         <button type="submit">Add Member</button>
@@ -2714,15 +2716,24 @@ function bindActions(role, state) {
       const data = Object.fromEntries(new FormData(form));
 
       if (form.dataset.action === "addMember") {
-        if (state.members.some((member) => member.email.toLowerCase() === data.email.trim().toLowerCase())) {
-          window.alert("A member with this email already exists.");
+        if (data.password !== data.confirmPassword) {
+          window.alert("The passwords do not match.");
           return;
         }
-        const id = nextEntityId(state.members, "M");
-        state.members.push({ id, name: data.name, email: data.email, trainerId: data.trainerId, plan: "Free", status: "Trial", attendance: 0, progress: 0 });
-        upsertSubscription(state, id, data.plan);
-        state.payments.push({ memberId: id, amount: memberPlan(state, state.members.at(-1)).price, status: "Pending", invoice: `INV-${1001 + state.payments.length}` });
-        addActivity(state, `Admin added member ${data.name}`, "Member");
+        const response = await fetch(`${apiBaseUrl}/api/admin/members`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json", "Authorization": `Bearer ${currentUser()?.token || ""}` },
+          body: JSON.stringify({ name: data.name, email: data.email, password: data.password, trainerId: data.trainerId, plan: data.plan })
+        });
+        const result = await response.json().catch(() => ({}));
+        if (!response.ok) {
+          window.alert(result.message || "Unable to add this member.");
+          return;
+        }
+        localStorage.setItem(storageKey, JSON.stringify(result.state));
+        window.alert(`${result.member.name} was added and can now sign in with ${result.member.email}.`);
+        renderDashboard();
+        return;
       }
 
       if (form.dataset.action === "createInvoice") {
@@ -2946,7 +2957,7 @@ function bindActions(role, state) {
   });
 
   interactionRoot.querySelectorAll("button[data-action]").forEach((button) => {
-    button.addEventListener("click", () => {
+    button.addEventListener("click", async () => {
       if (button.dataset.action === "toggleMemberList") {
         memberListExpanded = !memberListExpanded;
         renderDashboard();
@@ -2995,13 +3006,19 @@ function bindActions(role, state) {
       if (button.dataset.action === "removeMember") {
         const member = state.members.find((item) => item.id === button.dataset.id);
         if (!member || !window.confirm(`Remove ${member.name} and all linked records?`)) return;
-        state.members = state.members.filter((item) => item.id !== member.id);
-        state.subscriptions = state.subscriptions.filter((item) => item.memberId !== member.id);
-        state.payments = state.payments.filter((item) => item.memberId !== member.id);
-        state.workouts = state.workouts.filter((item) => item.memberId !== member.id);
-        state.attendanceLog = (state.attendanceLog || []).filter((item) => item.memberId !== member.id);
-        delete state.aiMessages?.[member.id];
-        addActivity(state, `Admin removed ${member.name}`, "Member");
+        const response = await fetch(`${apiBaseUrl}/api/admin/member-delete`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json", "Authorization": `Bearer ${currentUser()?.token || ""}` },
+          body: JSON.stringify({ memberId: member.id })
+        });
+        const result = await response.json().catch(() => ({}));
+        if (!response.ok) {
+          window.alert(result.message || "Unable to remove this member.");
+          return;
+        }
+        localStorage.setItem(storageKey, JSON.stringify(result.state));
+        renderDashboard();
+        return;
       }
 
       if (button.dataset.action === "removeTrainer") {

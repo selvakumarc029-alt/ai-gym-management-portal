@@ -783,6 +783,54 @@ async function handleApi(request, response, pathname) {
     return sendJson(response, 200, tenant.state);
   }
 
+  if (request.method === "POST" && pathname === "/api/admin/members") {
+    const session = requireSession(request, response, db, ["admin"]); if (!session) return;
+    const tenant = tenantFor(session, db); if (!tenant) return sendJson(response, 404, { message: "Gym workspace not found." });
+    const body = await readBody(request);
+    const name = String(body.name || "").trim();
+    const email = String(body.email || "").trim().toLowerCase();
+    const password = String(body.password || "");
+    const state = tenant.state;
+    if (!name || !email || password.length < 8) return sendJson(response, 400, { message: "Name, email, and a password of at least 8 characters are required." });
+    if (db.users.some((user) => user.email === email) || state.members.some((member) => String(member.email).toLowerCase() === email)) {
+      return sendJson(response, 409, { message: "That email is already registered." });
+    }
+    const trainerId = state.trainers.some((trainer) => trainer.id === body.trainerId) ? body.trainerId : (state.trainers[0]?.id || "");
+    const plan = state.plans.find((item) => item.name === body.plan) || state.plans[0] || { name: "Basic", price: 0 };
+    const memberId = nextId(state.members, "M");
+    const member = { id: memberId, name, email, trainerId, plan: plan.name, status: "Active", attendance: 0, progress: 0, membershipStart: new Date().toISOString().slice(0, 10), goal: "Build consistency" };
+    state.members.push(member);
+    state.subscriptions.push({ memberId, plan: plan.name, amount: Number(plan.price || 0), status: "Active" });
+    state.payments.push({ memberId, amount: Number(plan.price || 0), status: "Pending", invoice: `INV-${1001 + state.payments.length}` });
+    state.activity.unshift([`Admin added member ${name}`, "Member"]);
+    state.activity = state.activity.slice(0, 8);
+    db.users.push({ email, password, role: "member", name, tenantId: tenant.id, redirect: "member-dashboard.html" });
+    writeDatabase(db);
+    return sendJson(response, 201, { member: { id: member.id, name: member.name, email: member.email }, state });
+  }
+
+  if (request.method === "POST" && pathname === "/api/admin/member-delete") {
+    const session = requireSession(request, response, db, ["admin"]); if (!session) return;
+    const tenant = tenantFor(session, db); if (!tenant) return sendJson(response, 404, { message: "Gym workspace not found." });
+    const body = await readBody(request);
+    const state = tenant.state;
+    const member = state.members.find((item) => item.id === body.memberId);
+    if (!member) return sendJson(response, 404, { message: "Member not found." });
+    state.members = state.members.filter((item) => item.id !== member.id);
+    state.subscriptions = state.subscriptions.filter((item) => item.memberId !== member.id);
+    state.payments = state.payments.filter((item) => item.memberId !== member.id);
+    state.workouts = state.workouts.filter((item) => item.memberId !== member.id);
+    state.attendanceLog = (state.attendanceLog || []).filter((item) => item.memberId !== member.id);
+    state.invoices = (state.invoices || []).filter((item) => !(item.recipientType === "member" && item.recipientId === member.id));
+    if (state.aiMessages) delete state.aiMessages[member.id];
+    db.users = db.users.filter((user) => !(user.tenantId === tenant.id && user.role === "member" && user.email === member.email));
+    Object.keys(db.sessions).forEach((token) => { if (db.sessions[token].email === member.email && db.sessions[token].tenantId === tenant.id) delete db.sessions[token]; });
+    state.activity.unshift([`Admin removed ${member.name}`, "Member"]);
+    state.activity = state.activity.slice(0, 8);
+    writeDatabase(db);
+    return sendJson(response, 200, { ok: true, state });
+  }
+
   if (request.method === "POST" && pathname === "/api/state") {
     const session = requireSession(request, response, db, ["admin", "trainer", "member"]); if (!session) return;
     const tenant = tenantFor(session, db); if (!tenant) return sendJson(response, 404, { message: "Gym workspace not found." });
