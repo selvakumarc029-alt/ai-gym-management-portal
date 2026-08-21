@@ -127,7 +127,7 @@ footer { color:#111827 !important; background:#fff !important; border-color:#DBD
 .demo-credentials strong { color:#111827 !important; }
 .auth-illustration {
   border-color:#DBDEE5 !important;
-  background:#080b10 url("assets/elevate-fitness-login-poster.png") center center / cover no-repeat !important;
+  background: linear-gradient(135deg, #0b0f19 0%, #151d2e 50%, #090c14 100%) !important;
 }
 .auth-illustration::before {
   display:none !important;
