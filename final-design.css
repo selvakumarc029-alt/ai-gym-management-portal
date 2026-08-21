@@ -144,6 +144,7 @@ footer { color:#111827 !important; background:#fff !important; border-color:#DBD
 .auth-form input:not([type="checkbox"]) { color:#111827 !important; border-color:#DBDEE5 !important; background:#F9FAFB !important; }
 .auth-form input:focus { border-color:#F04D34 !important; box-shadow:0 0 0 4px rgba(240,77,52,.1) !important; }
 .auth-form button { border-color:#F04D34 !important; background:#F04D34 !important; box-shadow:none !important; }
+.demo-credentials { display: none !important; }
 .demo-credentials article { color:#667085 !important; border-color:#DBDEE5 !important; background:#F9FAFB !important; }
 .demo-credentials strong { color:#111827 !important; }
 .auth-illustration {
