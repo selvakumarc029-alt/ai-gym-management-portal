@@ -99,7 +99,18 @@ footer { color:#111827 !important; background:#fff !important; border-color:#DBD
 .hero .dashboard-shell { border-color:#DBDEE5 !important; box-shadow:0 28px 70px rgba(17,24,39,.14) !important; }
 
 /* Authentication */
-.auth-card,.auth-card.register-card { border-color:#DBDEE5 !important; background:#fff !important; box-shadow:0 24px 70px rgba(17,24,39,.12) !important; }
+.auth-card,.auth-card.register-card {
+  display:flex !important;
+  flex-direction:column !important;
+  max-width:480px !important;
+  width:92% !important;
+  margin:0 auto !important;
+  border-radius:24px !important;
+  border-color:#DBDEE5 !important;
+  background:#fff !important;
+  box-shadow:0 24px 70px rgba(17,24,39,.12) !important;
+  overflow:hidden !important;
+}
 .bodybuilding-logo {
   display:inline-flex !important;
   width:188px;
@@ -115,8 +126,18 @@ footer { color:#111827 !important; background:#fff !important; border-color:#DBD
   height:auto;
   object-fit:contain;
 }
-.auth-panel,.auth-card.register-card .auth-panel { color:#111827 !important; background:#fff !important; }
+.auth-panel,.auth-card.register-card .auth-panel {
+  width:100% !important;
+  min-height:auto !important;
+  padding:36px 32px !important;
+  color:#111827 !important;
+  background:#fff !important;
+}
 .mini-logo { color:#111827 !important; }
+.auth-copy {
+  margin-top:20px !important;
+  width:100% !important;
+}
 .auth-copy h1 { color:#111827 !important; }
 .auth-copy>p,.form-row { color:#667085 !important; }
 .auth-form label { color:#344054 !important; }
@@ -126,13 +147,6 @@ footer { color:#111827 !important; background:#fff !important; border-color:#DBD
 .demo-credentials article { color:#667085 !important; border-color:#DBDEE5 !important; background:#F9FAFB !important; }
 .demo-credentials strong { color:#111827 !important; }
 .auth-illustration {
-  border-color:#DBDEE5 !important;
-  background: linear-gradient(135deg, #0b0f19 0%, #151d2e 50%, #090c14 100%) !important;
-}
-.auth-illustration::before {
-  display:none !important;
-}
-.auth-illustration::after {
   display:none !important;
 }
 
