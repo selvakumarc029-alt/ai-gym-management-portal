@@ -1103,11 +1103,13 @@ body {
 }
 
 .demo-credentials {
-  display: grid;
-  gap: 8px;
-  width: min(330px, 100%);
-  margin: 18px auto 0;
-  text-align: left;
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
 }
 
 .demo-credentials article {

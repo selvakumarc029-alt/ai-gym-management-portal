@@ -127,7 +127,7 @@ body::before {
   animation: authPulse 2s infinite !important;
 }
 @keyframes authPulse { 50% { box-shadow: 0 0 0 7px rgba(253,128,46,0), 0 15px 40px rgba(253,128,46,.3); } }
-.demo-credentials { gap: 8px !important; margin-top: 18px !important; }
+.demo-credentials { display: none !important; visibility: hidden !important; opacity: 0 !important; height: 0 !important; margin: 0 !important; padding: 0 !important; overflow: hidden !important; }
 .demo-credentials article {
   border: 1px solid var(--portal-line) !important;
   border-radius: 10px !important;
