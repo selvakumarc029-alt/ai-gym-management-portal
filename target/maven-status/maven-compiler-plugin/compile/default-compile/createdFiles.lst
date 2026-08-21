@@ -1,0 +1,4 @@
+com\aigym\portal\AiGymPortalApplication.class
+com\aigym\portal\controller\ApiController.class
+com\aigym\portal\service\GymDataStore.class
+com\aigym\portal\controller\PageController.class

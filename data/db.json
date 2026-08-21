@@ -1,0 +1,898 @@
+{
+  "users": [
+    {
+      "email": "admin@aigym.com",
+      "password": "admin123",
+      "role": "admin",
+      "name": "Admin",
+      "redirect": "admin-dashboard.html"
+    },
+    {
+      "email": "trainer@aigym.com",
+      "password": "trainer123",
+      "role": "trainer",
+      "name": "David Johnson",
+      "redirect": "trainer-dashboard.html"
+    },
+    {
+      "email": "member@aigym.com",
+      "password": "member123",
+      "role": "member",
+      "name": "Arun Kumar",
+      "redirect": "member-dashboard.html"
+    }
+  ],
+  "state": {
+    "plans": [
+      {
+        "name": "Basic",
+        "duration": "1 Month",
+        "price": 999,
+        "label": "Attendance + membership"
+      },
+      {
+        "name": "Standard",
+        "duration": "3 Months",
+        "price": 2499,
+        "label": "Workout schedule + attendance"
+      },
+      {
+        "name": "Premium",
+        "duration": "6 Months",
+        "price": 4499,
+        "label": "Diet plan + trainer reviews"
+      },
+      {
+        "name": "Elite",
+        "duration": "12 Months",
+        "price": 7999,
+        "label": "Priority trainer support"
+      }
+    ],
+    "members": [
+      {
+        "id": "M001",
+        "name": "Arun Kumar",
+        "email": "member@aigym.com",
+        "trainerId": "T001",
+        "plan": "Premium",
+        "status": "Active",
+        "attendance": 25,
+        "progress": 88,
+        "age": 28,
+        "gender": "Male",
+        "height": 175,
+        "weight": 78,
+        "medicalHistory": "No major concerns",
+        "emergencyContact": "+91 98765 43210",
+        "membershipStart": "2026-07-01",
+        "membershipEnd": "2026-08-16",
+        "caloriesTarget": 2200,
+        "caloriesLogged": 1930,
+        "waterTarget": 3,
+        "waterIntake": 2.3,
+        "proteinTarget": 140,
+        "carbsTarget": 240,
+        "fatTarget": 65,
+        "goal": "Build muscle",
+        "bodyFat": 18,
+        "muscleMass": 34,
+        "measurements": "Chest 40 in | Waist 32 in",
+        "photo": "data:image/jpeg;base64,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"
+      },
+      {
+        "id": "M002",
+        "name": "Priya Shah",
+        "email": "priya@aigym.com",
+        "trainerId": "T002",
+        "plan": "Basic",
+        "status": "Active",
+        "attendance": 15,
+        "progress": 64,
+        "age": 25,
+        "gender": "Female",
+        "height": 164,
+        "weight": 61,
+        "medicalHistory": "Knee care",
+        "emergencyContact": "+91 98765 43211",
+        "membershipStart": "2026-07-03",
+        "membershipEnd": "2026-08-03",
+        "caloriesTarget": 1800,
+        "caloriesLogged": 1320,
+        "waterTarget": 2.6,
+        "waterIntake": 1.4,
+        "proteinTarget": 105,
+        "carbsTarget": 190,
+        "fatTarget": 52,
+        "goal": "Fat loss",
+        "bodyFat": 24,
+        "muscleMass": 25,
+        "measurements": "Waist 29 in | Hip 38 in"
+      },
+      {
+        "id": "M003",
+        "name": "Daniel Roy",
+        "email": "daniel@aigym.com",
+        "trainerId": "T001",
+        "plan": "Free",
+        "status": "Trial",
+        "attendance": 6,
+        "progress": 35,
+        "age": 31,
+        "gender": "Male",
+        "height": 172,
+        "weight": 84,
+        "medicalHistory": "Shoulder mobility",
+        "emergencyContact": "+91 98765 43212",
+        "membershipStart": "2026-07-05",
+        "membershipEnd": "2026-07-15",
+        "caloriesTarget": 2100,
+        "caloriesLogged": 1450,
+        "waterTarget": 3,
+        "waterIntake": 1.2,
+        "proteinTarget": 130,
+        "carbsTarget": 210,
+        "fatTarget": 60,
+        "goal": "Strength comeback",
+        "bodyFat": 22,
+        "muscleMass": 32,
+        "measurements": "Chest 39 in | Waist 35 in"
+      }
+    ],
+    "trainers": [
+      {
+        "id": "T001",
+        "name": "David Johnson",
+        "specialty": "Strength",
+        "sessions": 7,
+        "score": 96
+      },
+      {
+        "id": "T002",
+        "name": "Sarah Parker",
+        "specialty": "Fitness",
+        "sessions": 5,
+        "score": 94
+      }
+    ],
+    "subscriptions": [
+      {
+        "memberId": "M001",
+        "plan": "Premium",
+        "amount": 4499,
+        "status": "Active"
+      },
+      {
+        "memberId": "M002",
+        "plan": "Basic",
+        "amount": 999,
+        "status": "Active"
+      },
+      {
+        "memberId": "M003",
+        "plan": "Free",
+        "amount": 0,
+        "status": "Trial"
+      }
+    ],
+    "workouts": [
+      {
+        "memberId": "M001",
+        "title": "AI strength progression",
+        "tag": "45 min",
+        "done": false
+      },
+      {
+        "memberId": "M001",
+        "title": "AI diet chart updated",
+        "tag": "Diet",
+        "done": false
+      },
+      {
+        "memberId": "M001",
+        "title": "AI strength progression",
+        "tag": "45 min",
+        "done": false
+      },
+      {
+        "memberId": "M001",
+        "title": "AI strength progression",
+        "tag": "45 min",
+        "done": false
+      },
+      {
+        "memberId": "M001",
+        "title": "AI strength progression",
+        "tag": "45 min",
+        "done": false
+      },
+      {
+        "memberId": "M001",
+        "title": "AI strength progression",
+        "tag": "45 min",
+        "done": false
+      },
+      {
+        "memberId": "M001",
+        "title": "AI strength progression",
+        "tag": "45 min",
+        "done": false
+      },
+      {
+        "memberId": "M001",
+        "title": "AI strength progression",
+        "tag": "45 min",
+        "done": false
+      },
+      {
+        "memberId": "M001",
+        "title": "AI strength progression",
+        "tag": "45 min",
+        "done": false
+      },
+      {
+        "memberId": "M001",
+        "title": "AI strength progression",
+        "tag": "45 min",
+        "done": false
+      },
+      {
+        "memberId": "M001",
+        "title": "AI strength progression",
+        "tag": "45 min",
+        "done": false
+      },
+      {
+        "memberId": "M001",
+        "title": "AI strength progression",
+        "tag": "45 min",
+        "done": false
+      },
+      {
+        "memberId": "M001",
+        "title": "AI strength progression",
+        "tag": "45 min",
+        "done": false
+      },
+      {
+        "memberId": "M001",
+        "title": "AI strength progression",
+        "tag": "45 min",
+        "done": false
+      },
+      {
+        "memberId": "M001",
+        "title": "Trainer review session requested",
+        "tag": "Booking",
+        "done": false
+      },
+      {
+        "memberId": "M001",
+        "title": "Upper body strength",
+        "tag": "45 min",
+        "done": false
+      },
+      {
+        "memberId": "M001",
+        "title": "High protein diet note",
+        "tag": "Diet",
+        "done": false
+      },
+      {
+        "memberId": "M002",
+        "title": "Mobility and core",
+        "tag": "30 min",
+        "done": false
+      }
+    ],
+    "dietTemplates": [
+      "Muscle Gain",
+      "Fat Loss",
+      "Bodybuilding",
+      "Women Fitness",
+      "Senior Fitness"
+    ],
+    "workoutTemplates": [
+      "Chest",
+      "Leg",
+      "Back",
+      "Shoulder",
+      "Cardio",
+      "HIIT"
+    ],
+    "payments": [
+      {
+        "memberId": "M001",
+        "amount": 1999,
+        "status": "Paid",
+        "invoice": "INV-1001"
+      },
+      {
+        "memberId": "M002",
+        "amount": 999,
+        "status": "Paid",
+        "invoice": "INV-1002"
+      },
+      {
+        "memberId": "M003",
+        "amount": 0,
+        "status": "Paid",
+        "invoice": "INV-1003"
+      }
+    ],
+    "equipment": [
+      {
+        "id": "E001",
+        "name": "Treadmill",
+        "count": 4,
+        "status": "Ready"
+      },
+      {
+        "id": "E002",
+        "name": "Dumbbell Rack",
+        "count": 2,
+        "status": "Ready"
+      },
+      {
+        "id": "E003",
+        "name": "Smith Machine",
+        "count": 1,
+        "status": "Service"
+      },
+      {
+        "id": "E004",
+        "name": "Bench Press",
+        "count": 3,
+        "status": "Ready"
+      },
+      {
+        "id": "E005",
+        "name": "Squat Rack",
+        "count": 2,
+        "status": "Ready"
+      },
+      {
+        "id": "E006",
+        "name": "Cable Crossover",
+        "count": 1,
+        "status": "Ready"
+      },
+      {
+        "id": "E007",
+        "name": "Leg Press",
+        "count": 2,
+        "status": "Ready"
+      },
+      {
+        "id": "E008",
+        "name": "Rowing Machine",
+        "count": 2,
+        "status": "Ready"
+      },
+      {
+        "id": "E009",
+        "name": "Exercise Bike",
+        "count": 5,
+        "status": "Ready"
+      },
+      {
+        "id": "E010",
+        "name": "Kettlebell Set",
+        "count": 3,
+        "status": "Ready"
+      }
+    ],
+    "activity": [
+      [
+        "Arun Kumar marked attendance",
+        "Check-in"
+      ],
+      [
+        "Admin issued INV-2001 to Arun Kumar",
+        "Invoice"
+      ],
+      [
+        "Admin created draft invoice INV-2001",
+        "Invoice"
+      ],
+      [
+        "AI generated workout for Arun Kumar",
+        "AI"
+      ],
+      [
+        "Arun Kumar checked out",
+        "Check-out"
+      ],
+      [
+        "Arun Kumar marked attendance",
+        "Check-in"
+      ],
+      [
+        "AI assistant answered form",
+        "AI"
+      ],
+      [
+        "AI assistant answered workout",
+        "AI"
+      ]
+    ],
+    "aiMessages": {
+      "M001": [
+        {
+          "from": "ai",
+          "text": "Live AI is not connected. Run setup-groq-key.bat once, keep the Groq proxy window open, refresh this dashboard, and ask again."
+        },
+        {
+          "from": "user",
+          "text": "01Today's workout"
+        },
+        {
+          "from": "ai",
+          "text": "Live AI is not connected. Run setup-groq-key.bat once, keep the Groq proxy window open, refresh this dashboard, and ask again."
+        },
+        {
+          "from": "user",
+          "text": "02Exercise form"
+        },
+        {
+          "from": "ai",
+          "text": "Live AI is not connected. Run setup-groq-key.bat once, keep the Groq proxy window open, refresh this dashboard, and ask again."
+        }
+      ]
+    },
+    "attendanceLog": [
+      {
+        "id": "A0004",
+        "memberId": "M001",
+        "date": "2026-07-18",
+        "time": "10:45 am"
+      },
+      {
+        "id": "A0003",
+        "memberId": "M001",
+        "date": "2026-07-17",
+        "time": "02:57 pm",
+        "checkOutTime": "03:26 pm"
+      },
+      {
+        "id": "A0002",
+        "memberId": "M001",
+        "date": "2026-07-16",
+        "time": "01:02 pm",
+        "checkOutTime": "02:24 pm"
+      },
+      {
+        "id": "A0001",
+        "memberId": "M002",
+        "date": "2026-07-16",
+        "time": "10:46 am"
+      }
+    ],
+    "invoices": [
+      {
+        "id": "I02001",
+        "number": "INV-2001",
+        "recipientType": "member",
+        "recipientId": "M001",
+        "issueDate": "2026-07-18",
+        "dueDate": "2026-07-25",
+        "items": [
+          {
+            "description": "personal training package",
+            "quantity": 1,
+            "amount": 1500
+          }
+        ],
+        "discount": 0,
+        "taxRate": 18,
+        "paymentStatus": "Unpaid",
+        "status": "Issued",
+        "notes": "please pay within the due date",
+        "createdAt": "2026-07-18T05:10:35.002Z",
+        "issuedAt": "2026-07-18T05:10:45.290Z"
+      }
+    ]
+  },
+  "sessions": {
+    "fdfa653707350e9d3f0fac579c803c3cc6f69abb70ece893": {
+      "email": "admin@aigym.com",
+      "role": "admin",
+      "createdAt": "2026-07-13T05:57:48.887Z"
+    },
+    "5c54ab6998ab54b2d3a8067fbecfca47ccbc780afd26dbee": {
+      "email": "admin@aigym.com",
+      "role": "admin",
+      "createdAt": "2026-07-13T05:58:36.457Z"
+    },
+    "c2db8fa164c9b2143a59e15bc6a85a8633df3a8f3a0f4346": {
+      "email": "admin@aigym.com",
+      "role": "admin",
+      "createdAt": "2026-07-13T06:14:25.766Z"
+    },
+    "cc21a575f90f7442a225864f17b7de46e0cc67d9d619ffed": {
+      "email": "admin@aigym.com",
+      "role": "admin",
+      "createdAt": "2026-07-13T06:14:42.246Z"
+    },
+    "76417231852271a55a43906bb5a853f5424905d238aef8b4": {
+      "email": "admin@aigym.com",
+      "role": "admin",
+      "createdAt": "2026-07-13T06:16:27.742Z"
+    },
+    "87d013ac0e89362bd691e176b8e164c985ddd440f5b9b481": {
+      "email": "admin@aigym.com",
+      "role": "admin",
+      "createdAt": "2026-07-13T06:16:48.696Z"
+    },
+    "21709a0ff557cd49d39d8367852f60d96baf70d5c7cc0cc6": {
+      "email": "admin@aigym.com",
+      "role": "admin",
+      "createdAt": "2026-07-13T06:21:58.212Z"
+    },
+    "2f6bd5c38d72bb0e5709b9f00f3153e9400f57d269077e6f": {
+      "email": "admin@aigym.com",
+      "role": "admin",
+      "createdAt": "2026-07-13T06:28:19.258Z"
+    },
+    "20f3ca5c152b7b4991cd39dbdcfb291ae72f39d8806123cc": {
+      "email": "admin@aigym.com",
+      "role": "admin",
+      "createdAt": "2026-07-13T06:28:42.890Z"
+    },
+    "23426f0e8b92b554840b242484b65b4e3fd64a1e9fdcc176": {
+      "email": "member@aigym.com",
+      "role": "member",
+      "createdAt": "2026-07-13T06:30:59.767Z"
+    },
+    "bde64585ca3677d8c1bb82e4fe6b7ef6faf414d47f77a64e": {
+      "email": "admin@aigym.com",
+      "role": "admin",
+      "createdAt": "2026-07-13T07:13:33.093Z"
+    },
+    "9d4f5f07c2ab55a9967203fa2a18a21747eb121904dec452": {
+      "email": "member@aigym.com",
+      "role": "member",
+      "createdAt": "2026-07-13T10:52:58.982Z"
+    },
+    "5ecabfcee8d94b9a12b9dc535d81d558b8a446e06a57da72": {
+      "email": "admin@aigym.com",
+      "role": "admin",
+      "createdAt": "2026-07-13T10:53:15.314Z"
+    },
+    "b8a69cd98fb7a3c189eeb5f80ae5d8ecb9cd0d09cbf96325": {
+      "email": "admin@aigym.com",
+      "role": "admin",
+      "createdAt": "2026-07-13T11:02:19.319Z"
+    },
+    "7aabfd7b8d4a18ef8c1da2687f9616feb46885d509d589e2": {
+      "email": "admin@aigym.com",
+      "role": "admin",
+      "createdAt": "2026-07-13T11:05:20.393Z"
+    },
+    "9f2f31a7ae053c29c802501d5b3c10fa6a059721bf33e105": {
+      "email": "member@aigym.com",
+      "role": "member",
+      "createdAt": "2026-07-13T11:06:11.335Z"
+    },
+    "d0fc588e86be9d93c5409af6528b8e0f472785a7ad840a00": {
+      "email": "admin@aigym.com",
+      "role": "admin",
+      "createdAt": "2026-07-13T11:07:12.679Z"
+    },
+    "f8bb5bf3518dd27c254f2af93a29b95f3e655c2a869ff952": {
+      "email": "admin@aigym.com",
+      "role": "admin",
+      "createdAt": "2026-07-13T11:07:12.684Z"
+    },
+    "25d8a461fbf4758691730e900c0489ea0c8be381f000d8ca": {
+      "email": "admin@aigym.com",
+      "role": "admin",
+      "createdAt": "2026-07-13T11:08:08.643Z"
+    },
+    "52489347cbfe7035ef3d03f2a45ee28564c7f5deeaa6df4a": {
+      "email": "admin@aigym.com",
+      "role": "admin",
+      "createdAt": "2026-07-13T11:11:22.699Z"
+    },
+    "8ca3111ace8a2c1c633207e81bbd41db537ff11e7944c1f7": {
+      "email": "admin@aigym.com",
+      "role": "admin",
+      "createdAt": "2026-07-13T11:12:12.223Z"
+    },
+    "118c19c17c3d0776450b48c2f1cc2a7c8fea9d03dc3e33e0": {
+      "email": "trainer@aigym.com",
+      "role": "trainer",
+      "createdAt": "2026-07-13T11:14:57.880Z"
+    },
+    "3b124f68cd705aff5dea6530ac7a805df02d80979f20baa0": {
+      "email": "member@aigym.com",
+      "role": "member",
+      "createdAt": "2026-07-13T11:17:39.006Z"
+    },
+    "b86fdaca8fd64ccb37d6164a0cc534b40d6afb4db724525a": {
+      "email": "member@aigym.com",
+      "role": "member",
+      "createdAt": "2026-07-13T11:20:49.260Z"
+    },
+    "41e38dfcad120db3abfb5fb420c3fd744130839b5a896293": {
+      "email": "admin@aigym.com",
+      "role": "admin",
+      "createdAt": "2026-07-13T11:21:29.840Z"
+    },
+    "addaa82fd8a13f049af30ba8ab1539bbf3dc48f429a28fdb": {
+      "email": "admin@aigym.com",
+      "role": "admin",
+      "createdAt": "2026-07-13T11:27:28.703Z"
+    },
+    "ad3bf27f876eb01d8ff9a38424892808facc64ead8a8a2f7": {
+      "email": "admin@aigym.com",
+      "role": "admin",
+      "createdAt": "2026-07-13T11:30:00.100Z"
+    },
+    "ae53a7825a936219c22a9323346a0dc8197052b8477501c8": {
+      "email": "admin@aigym.com",
+      "role": "admin",
+      "createdAt": "2026-07-13T11:39:03.564Z"
+    },
+    "88035255908405250a638645768188d812fe4cb14278a49f": {
+      "email": "admin@aigym.com",
+      "role": "admin",
+      "createdAt": "2026-07-13T11:49:39.394Z"
+    },
+    "072a9469c9eb759057a9563823b3334d1ef1f69979e64647": {
+      "email": "admin@aigym.com",
+      "role": "admin",
+      "createdAt": "2026-07-14T09:24:25.112Z"
+    },
+    "daec37d780d72be7560d95f40500a972a10977ec2247da9c": {
+      "email": "trainer@aigym.com",
+      "role": "trainer",
+      "createdAt": "2026-07-14T09:27:04.362Z"
+    },
+    "605ac3d8b9bf139d00da84f2cfd1f4750b0b308aab394fea": {
+      "email": "member@aigym.com",
+      "role": "member",
+      "createdAt": "2026-07-14T09:38:10.815Z"
+    },
+    "3a8ab41a0df0042687762ec6a1697babc0e42f8fd48f852e": {
+      "email": "member@aigym.com",
+      "role": "member",
+      "createdAt": "2026-07-14T10:00:29.654Z"
+    },
+    "6e1310b09d9e121536da51c6afd63a8d0816eab4e51cdf33": {
+      "email": "member@aigym.com",
+      "role": "member",
+      "createdAt": "2026-07-14T12:06:25.227Z"
+    },
+    "1bd74f8288838d049c1d5b23004e4707fb3eed7c0136c986": {
+      "email": "admin@aigym.com",
+      "role": "admin",
+      "createdAt": "2026-07-14T12:08:34.085Z"
+    },
+    "c9ed845b314d2a8a8ba1569e40bf2cf283837ccbf9263b03": {
+      "email": "member@aigym.com",
+      "role": "member",
+      "createdAt": "2026-07-15T04:45:55.400Z"
+    },
+    "5e47c935ac42e1522f4192773e50dc73dbc12e163687faf0": {
+      "email": "admin@aigym.com",
+      "role": "admin",
+      "createdAt": "2026-07-15T04:59:26.767Z"
+    },
+    "019b6e52066c6fd7d7ed14ee732647ca81813c6b02a91816": {
+      "email": "member@aigym.com",
+      "role": "member",
+      "createdAt": "2026-07-15T05:26:13.750Z"
+    },
+    "0a64d1bb9f1c45b88183374dbc72b6b9": {
+      "email": "admin@aigym.com",
+      "role": "admin",
+      "createdAt": "2026-07-15T12:18:47.294426+05:30[Asia/Kolkata]"
+    },
+    "187eec415e95499db254f3e22d42115e": {
+      "email": "admin@aigym.com",
+      "role": "admin",
+      "createdAt": "2026-07-15T12:20:35.108678700+05:30[Asia/Kolkata]"
+    },
+    "2ece609e63564d8c8a309be7d4e0fca9": {
+      "email": "admin@aigym.com",
+      "role": "admin",
+      "createdAt": "2026-07-15T12:39:30.369396900+05:30[Asia/Kolkata]"
+    },
+    "e0205d88bf504e3b9fcb9b6b5024eec8": {
+      "email": "admin@aigym.com",
+      "role": "admin",
+      "createdAt": "2026-07-15T16:56:34.856548400+05:30[Asia/Kolkata]"
+    },
+    "738af99b2e804068bbf5d9626fc88487": {
+      "email": "admin@aigym.com",
+      "role": "admin",
+      "createdAt": "2026-07-16T10:42:11.106263+05:30[Asia/Kolkata]"
+    },
+    "5a9fad7a085147d2a03d31b8636da429": {
+      "email": "admin@aigym.com",
+      "role": "admin",
+      "createdAt": "2026-07-16T10:45:53.790197800+05:30[Asia/Kolkata]"
+    },
+    "14de059c4405459081b33ca3c3bb623f": {
+      "email": "trainer@aigym.com",
+      "role": "trainer",
+      "createdAt": "2026-07-16T10:52:36.921629+05:30[Asia/Kolkata]"
+    },
+    "74282f3108d1401ebbcfa04eb6154dd8": {
+      "email": "admin@aigym.com",
+      "role": "admin",
+      "createdAt": "2026-07-16T10:56:48.415153300+05:30[Asia/Kolkata]"
+    },
+    "7e3a6c7cd53e4c5d9220f7cd388c734c": {
+      "email": "member@aigym.com",
+      "role": "member",
+      "createdAt": "2026-07-16T11:32:10.125105100+05:30[Asia/Kolkata]"
+    },
+    "af08842c788240d0a67c500a97d0bc93": {
+      "email": "admin@aigym.com",
+      "role": "admin",
+      "createdAt": "2026-07-16T11:34:43.762924400+05:30[Asia/Kolkata]"
+    },
+    "958a49472f8a44e3952f52576027db31": {
+      "email": "admin@aigym.com",
+      "role": "admin",
+      "createdAt": "2026-07-16T11:35:07.294897700+05:30[Asia/Kolkata]"
+    },
+    "5a44ff1059a84dbeaa2452972e5d32f9": {
+      "email": "member@aigym.com",
+      "role": "member",
+      "createdAt": "2026-07-16T11:43:11.454405800+05:30[Asia/Kolkata]"
+    },
+    "efac1068438d4533ada6f6a012a1c945": {
+      "email": "admin@aigym.com",
+      "role": "admin",
+      "createdAt": "2026-07-16T12:13:55.075360700+05:30[Asia/Kolkata]"
+    },
+    "794457f403f249c2a773718c154c46fd": {
+      "email": "admin@aigym.com",
+      "role": "admin",
+      "createdAt": "2026-07-16T12:20:17.055257800+05:30[Asia/Kolkata]"
+    },
+    "31157352f28e4d368ff24a48389eac28": {
+      "email": "admin@aigym.com",
+      "role": "admin",
+      "createdAt": "2026-07-16T12:55:18.772356500+05:30[Asia/Kolkata]"
+    },
+    "26db990cda3b4172a0b81e911387f2db": {
+      "email": "admin@aigym.com",
+      "role": "admin",
+      "createdAt": "2026-07-16T13:02:41.594225500+05:30[Asia/Kolkata]"
+    },
+    "9108ab981b954376a393714734082590": {
+      "email": "admin@aigym.com",
+      "role": "admin",
+      "createdAt": "2026-07-16T14:31:25.388324100+05:30[Asia/Kolkata]"
+    },
+    "f32870b487a04826b5342572697ed2b7": {
+      "email": "admin@aigym.com",
+      "role": "admin",
+      "createdAt": "2026-07-16T14:31:39.100694700+05:30[Asia/Kolkata]"
+    },
+    "fedad9d60871420d8a4c3acacb219626": {
+      "email": "trainer@aigym.com",
+      "role": "trainer",
+      "createdAt": "2026-07-16T14:32:52.142919300+05:30[Asia/Kolkata]"
+    },
+    "3846c0167a5e4034981edc24ca88e3b1": {
+      "email": "admin@aigym.com",
+      "role": "admin",
+      "createdAt": "2026-07-16T14:47:24.255591500+05:30[Asia/Kolkata]"
+    },
+    "6c5ff7d6249a429cacc7b88cc2d2a041": {
+      "email": "trainer@aigym.com",
+      "role": "trainer",
+      "createdAt": "2026-07-16T14:52:23.143542200+05:30[Asia/Kolkata]"
+    },
+    "9ea3e57f576d4d628e55b7aa5ae543f9": {
+      "email": "admin@aigym.com",
+      "role": "admin",
+      "createdAt": "2026-07-16T14:53:09.296320200+05:30[Asia/Kolkata]"
+    },
+    "70d0dabe81c842b8924274f3f0b92caf": {
+      "email": "admin@aigym.com",
+      "role": "admin",
+      "createdAt": "2026-07-16T15:28:25.742367800+05:30[Asia/Kolkata]"
+    },
+    "ad9c0acfa2c442b68ca28b17b795d8f6": {
+      "email": "admin@aigym.com",
+      "role": "admin",
+      "createdAt": "2026-07-16T18:02:36.277152300+05:30[Asia/Kolkata]"
+    },
+    "88afef2a8ce74f8b8326afb838aba370": {
+      "email": "admin@aigym.com",
+      "role": "admin",
+      "createdAt": "2026-07-17T10:13:14.558860500+05:30[Asia/Kolkata]"
+    },
+    "de96b8b69848431d9d51db8f032ea4ed": {
+      "email": "trainer@aigym.com",
+      "role": "trainer",
+      "createdAt": "2026-07-17T10:14:24.769784100+05:30[Asia/Kolkata]"
+    },
+    "38d709e233044ab5b0d3dbfe2f90906b": {
+      "email": "member@aigym.com",
+      "role": "member",
+      "createdAt": "2026-07-17T10:22:49.925098800+05:30[Asia/Kolkata]"
+    },
+    "e0a3f84211d9427984c2ccd7e0ac7129": {
+      "email": "admin@aigym.com",
+      "role": "admin",
+      "createdAt": "2026-07-17T10:45:15.930010700+05:30[Asia/Kolkata]"
+    },
+    "5c853e5f71cb4764becaaf8595173f72": {
+      "email": "trainer@aigym.com",
+      "role": "trainer",
+      "createdAt": "2026-07-17T10:50:02.068621400+05:30[Asia/Kolkata]"
+    },
+    "9c479ea4cac44ef6a0299556b56f11bc": {
+      "email": "admin@aigym.com",
+      "role": "admin",
+      "createdAt": "2026-07-17T11:28:18.123029700+05:30[Asia/Kolkata]"
+    },
+    "a746dc33566b464e9113244c31f3ba4c": {
+      "email": "trainer@aigym.com",
+      "role": "trainer",
+      "createdAt": "2026-07-17T11:55:59.200072800+05:30[Asia/Kolkata]"
+    },
+    "58f486414b504d06a9846f713b496e7c": {
+      "email": "member@aigym.com",
+      "role": "member",
+      "createdAt": "2026-07-17T12:01:21.639113300+05:30[Asia/Kolkata]"
+    },
+    "f6623c25622c4ef49b60438625c7744a": {
+      "email": "admin@aigym.com",
+      "role": "admin",
+      "createdAt": "2026-07-17T14:02:33.767339300+05:30[Asia/Kolkata]"
+    },
+    "102629c6bc554ebf951fa51a3a253903": {
+      "email": "member@aigym.com",
+      "role": "member",
+      "createdAt": "2026-07-17T14:09:26.748637700+05:30[Asia/Kolkata]"
+    },
+    "755c38d8668444369751d9d7ca653658": {
+      "email": "admin@aigym.com",
+      "role": "admin",
+      "createdAt": "2026-07-17T17:55:24.867940100+05:30[Asia/Kolkata]"
+    },
+    "a6bf61fc66db4e8c8c4b8f892f64a452": {
+      "email": "admin@aigym.com",
+      "role": "admin",
+      "createdAt": "2026-07-17T17:58:09.519261900+05:30[Asia/Kolkata]"
+    },
+    "90ab1231a27f480ea774df94acd416f4": {
+      "email": "admin@aigym.com",
+      "role": "admin",
+      "createdAt": "2026-07-18T10:07:54.720987200+05:30[Asia/Kolkata]"
+    },
+    "604fedef69ff41a0bab2eab0ecabaec6": {
+      "email": "member@aigym.com",
+      "role": "member",
+      "createdAt": "2026-07-18T10:09:37.043705100+05:30[Asia/Kolkata]"
+    },
+    "62943074bdfd4307b114eab35dd10fa2": {
+      "email": "admin@aigym.com",
+      "role": "admin",
+      "createdAt": "2026-07-18T10:34:42.323650700+05:30[Asia/Kolkata]"
+    },
+    "9d268c0bab394c329b4c798c29754b13": {
+      "email": "member@aigym.com",
+      "role": "member",
+      "createdAt": "2026-07-18T10:41:07.347734800+05:30[Asia/Kolkata]"
+    },
+    "4ccb25fa8371487d95872adde1fdb599": {
+      "email": "trainer@aigym.com",
+      "role": "trainer",
+      "createdAt": "2026-07-18T11:12:19.425685700+05:30[Asia/Kolkata]"
+    },
+    "e49c2363577e8fb4e351452a8cada218958f0813fa099ed4": {
+      "email": "member@aigym.com",
+      "role": "member",
+      "createdAt": "2026-08-03T05:08:53.066Z"
+    }
+  }
+}
