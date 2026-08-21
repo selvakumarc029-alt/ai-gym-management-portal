@@ -251,8 +251,32 @@ body.landing-page:before{background-image:radial-gradient(#ded7d0 1px,transparen
 .landing-page .phone-chat,.landing-page .chat-body{background:#f7f6f4!important}.landing-page .chat-header{background:#302a26!important;color:#fff!important}.landing-page .bubble{border-color:#e7e1dc!important;background:#fff!important;color:#302a26!important}.landing-page .bubble.sent{background:#fff0e6!important;color:#302a26!important}
 .landing-page .checkin-list article,.landing-page .member-mini,.landing-page .money,.landing-page .stat-row span{background:#fbfaf8!important;color:#302a26!important}.landing-page .rings{border-color:#eee8e3!important;border-top-color:#ff7417!important}.landing-page .green-card{background:radial-gradient(circle at 80%,rgba(255,116,23,.12),transparent 16rem),#fff!important}
 .landing-page .billing-toggle{background:#ebe7e3!important}.landing-page .billing-toggle button{color:#716b67!important}.landing-page .billing-toggle button.active{background:#302a26!important;color:#fff!important}.landing-page .pricing-grid .popular{border-color:#ff7417!important;box-shadow:0 22px 55px rgba(48,42,38,.1)!important}.landing-page .popular-label,.landing-page .faq-list details[open] summary span{background:#ff7417!important;color:#fff!important}.landing-page .faq-list summary span{background:#eee9e5!important;color:#716b67!important}
-.landing-page footer{border-color:#443d38!important;background:#302a26!important;color:#fff!important}.landing-page footer .brand{color:#fff!important}.landing-page footer p,.landing-page footer>div,.landing-page footer>small{color:#c9c2bc!important}.landing-page .bottom-bar{border-color:rgba(255,255,255,.12)!important;background:rgba(48,42,38,.96)!important;color:#fff!important}
+.landing-page footer footer p,.landing-page footer>div,.landing-page footer>small{color:#c9c2bc!important}.landing-page .bottom-bar{border-color:rgba(255,255,255,.12)!important;background:rgba(48,42,38,.96)!important;color:#fff!important}
 @media(max-width:900px){.landing-page .site-header nav{border-color:#e7e1dc!important;background:#fff!important}.landing-page .menu-button{color:#302a26!important}}
+
+/* Detailed Trainer Onboarding Form */
+.trainer-detail-card { margin-bottom: 24px !important; }
+.detailed-trainer-form { display: flex !important; flex-direction: column !important; gap: 18px !important; margin: 16px 0 24px !important; }
+.trainer-form-section { padding: 18px 20px !important; background: #f8fafc !important; border: 1px solid #e2e8f0 !important; border-radius: 16px !important; }
+.form-section-title { margin: 0 0 14px 0 !important; font-size: 14px !important; font-weight: 700 !important; color: #1e293b !important; display: flex !important; align-items: center !important; gap: 8px !important; }
+.trainer-form-grid { display: grid !important; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)) !important; gap: 14px !important; }
+.trainer-form-grid label, .trainer-form-section label { display: flex !important; flex-direction: column !important; gap: 6px !important; font-size: 12.5px !important; font-weight: 600 !important; color: #475569 !important; }
+.trainer-form-grid input, .trainer-form-grid select, .trainer-form-section textarea { width: 100% !important; padding: 10px 14px !important; border: 1px solid #cbd5e1 !important; border-radius: 10px !important; background: #ffffff !important; color: #0f172a !important; font-size: 13.5px !important; outline: none !important; box-shadow: none !important; }
+.trainer-form-grid input:focus, .trainer-form-grid select:focus, .trainer-form-section textarea:focus { border-color: #f04d34 !important; box-shadow: 0 0 0 3px rgba(240, 77, 52, 0.15) !important; }
+.add-trainer-btn { padding: 14px 24px !important; font-size: 15px !important; font-weight: 700 !important; border-radius: 12px !important; background: linear-gradient(135deg, #f04d34 0%, #d9381e 100%) !important; color: #ffffff !important; border: none !important; cursor: pointer !important; box-shadow: 0 6px 18px rgba(240, 77, 52, 0.25) !important; transition: all 0.2s ease !important; }
+.add-trainer-btn:hover { transform: translateY(-1px) !important; box-shadow: 0 10px 24px rgba(240, 77, 52, 0.35) !important; }
+.trainer-divider { border: 0 !important; border-top: 1px solid #e2e8f0 !important; margin: 24px 0 !important; }
+.trainer-list-title { margin: 0 0 16px 0 !important; font-size: 17px !important; font-weight: 700 !important; color: #0f172a !important; }
+.trainer-info-row { display: flex !important; justify-content: space-between !important; align-items: flex-start !important; gap: 16px !important; padding: 18px 20px !important; border: 1px solid #e2e8f0 !important; border-radius: 16px !important; background: #ffffff !important; margin-bottom: 12px !important; box-shadow: 0 2px 8px rgba(0,0,0,0.03) !important; }
+.trainer-card-details { display: flex !important; flex-direction: column !important; gap: 8px !important; flex: 1 !important; }
+.trainer-head { display: flex !important; align-items: center !important; gap: 10px !important; flex-wrap: wrap !important; }
+.trainer-name-title { font-size: 16px !important; font-weight: 700 !important; color: #0f172a !important; }
+.trainer-pill { background: #eff6ff !important; color: #2563eb !important; border: 1px solid #bfdbfe !important; font-size: 11.5px !important; padding: 3px 10px !important; border-radius: 20px !important; font-weight: 600 !important; }
+.score-pill { background: #fefce8 !important; color: #ca8a04 !important; border: 1px solid #fef08a !important; font-size: 11.5px !important; padding: 3px 10px !important; border-radius: 20px !important; font-weight: 600 !important; }
+.trainer-sub-info { display: flex !important; gap: 14px !important; flex-wrap: wrap !important; font-size: 12.5px !important; color: #64748b !important; }
+.trainer-bio-quote { margin: 4px 0 0 0 !important; font-style: italic !important; font-size: 12px !important; color: #475569 !important; border-left: 3px solid #cbd5e1 !important; padding-left: 10px !important; }
+.remove-trainer-btn { margin-top: 4px !important; }
+
 
 /* FAQ without a filled outer frame */
 .landing-page .faq-list,

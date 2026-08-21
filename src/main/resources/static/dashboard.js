@@ -647,21 +647,133 @@ function renderAdminMemberForm(state) {
 
 function renderAdminTrainerForm(state) {
   const rows = state.trainers.map((trainer) => `
-    <li class="admin-manage-row">
-      <span><strong>${trainer.name}</strong><small>${trainer.specialty} · ${trainerMemberCount(state, trainer.id)} members</small></span>
-      <button class="pill pill-button danger" type="button" data-action="removeTrainer" data-id="${trainer.id}">Remove</button>
+    <li class="admin-manage-row trainer-info-row">
+      <div class="trainer-card-details">
+        <div class="trainer-head">
+          <strong class="trainer-name-title">${trainer.name}</strong>
+          <span class="pill trainer-pill">${trainer.specialty || 'Strength & Conditioning'}</span>
+          <span class="pill score-pill">★ ${trainer.score || 95}% Rating</span>
+        </div>
+        <div class="trainer-sub-info">
+          <span>📧 ${trainer.email || 'N/A'}</span>
+          <span>📞 ${trainer.phone || 'N/A'}</span>
+          <span>📜 ${trainer.certifications || 'ACE Certified'}</span>
+        </div>
+        <div class="trainer-sub-info">
+          <span>⏳ ${trainer.experience || '3+ Years'}</span>
+          <span>🕒 ${trainer.shift || 'Morning Shift'}</span>
+          <span>👥 ${trainerMemberCount(state, trainer.id)} / ${trainer.maxCapacity || 15} Members</span>
+          <span>💰 ₹${trainer.monthlyFee || 3500}/mo (${trainer.commission || 30}% Comm)</span>
+        </div>
+        ${trainer.bio ? `<p class="trainer-bio-quote">"${trainer.bio}"</p>` : ''}
+      </div>
+      <button class="pill pill-button danger remove-trainer-btn" type="button" data-action="removeTrainer" data-id="${trainer.id}">Remove</button>
     </li>
   `).join("");
 
   return `
-    <details class="action-subcard dropdown-card">
-      <summary>Trainer Management</summary>
-      <form class="dashboard-form" data-action="addTrainer">
-        <label>Trainer name<input name="name" placeholder="Example: Mark Benson" required></label>
-        <label>Specialty<input name="specialty" placeholder="Strength / Yoga / Boxing" required></label>
-        <button type="submit">Add Trainer</button>
+    <details class="action-subcard dropdown-card trainer-detail-card" open>
+      <summary>Trainer Onboarding & Detailed Management</summary>
+      
+      <form class="dashboard-form detailed-trainer-form" data-action="addTrainer">
+        <div class="trainer-form-section">
+          <h4 class="form-section-title">👤 Personal & Contact Info</h4>
+          <div class="trainer-form-grid">
+            <label>Full Name *
+              <input name="name" placeholder="e.g. Mark Benson" required>
+            </label>
+            <label>Email Address (Portal Login) *
+              <input name="email" type="email" placeholder="e.g. mark.benson@aigym.com" required>
+            </label>
+            <label>Phone / WhatsApp *
+              <input name="phone" type="tel" placeholder="e.g. +91 98765 43210" required>
+            </label>
+            <label>Login Password *
+              <input name="password" type="password" value="trainer123" required>
+            </label>
+            <label>Gender
+              <select name="gender">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+              </select>
+            </label>
+            <label>Age
+              <input name="age" type="number" min="18" max="70" value="28" required>
+            </label>
+          </div>
+        </div>
+
+        <div class="trainer-form-section">
+          <h4 class="form-section-title">🏋️ Specialization & Qualifications</h4>
+          <div class="trainer-form-grid">
+            <label>Primary Specialty *
+              <select name="specialty" required>
+                <option value="Strength & Conditioning">Strength & Conditioning</option>
+                <option value="HIIT & Fat Loss">HIIT & Fat Loss</option>
+                <option value="Bodybuilding & Muscle Building">Bodybuilding & Muscle Building</option>
+                <option value="Yoga, Mobility & Flexibility">Yoga, Mobility & Flexibility</option>
+                <option value="Boxing & Functional Fitness">Boxing & Functional Fitness</option>
+                <option value="Rehabilitation & Clinical Nutrition">Rehabilitation & Clinical Nutrition</option>
+              </select>
+            </label>
+            <label>Certifications & Qualifications
+              <input name="certifications" placeholder="e.g. ACE CPT, NASM, REPs Level 3" value="ACE Certified Personal Trainer">
+            </label>
+            <label>Experience Level
+              <select name="experience">
+                <option value="1-2 Years (Junior)">1-2 Years (Junior Trainer)</option>
+                <option value="3-5 Years (Senior)" selected>3-5 Years (Senior Trainer)</option>
+                <option value="5-8 Years (Master)">5-8 Years (Master Trainer)</option>
+                <option value="8+ Years (Head Coach)">8+ Years (Head Coach)</option>
+              </select>
+            </label>
+            <label>Personal Training Rate (₹/month)
+              <input name="monthlyFee" type="number" min="0" value="3500" placeholder="3500">
+            </label>
+          </div>
+        </div>
+
+        <div class="trainer-form-section">
+          <h4 class="form-section-title">📅 Work Shift & Capacity</h4>
+          <div class="trainer-form-grid">
+            <label>Shift Timing
+              <select name="shift">
+                <option value="Morning Shift (6:00 AM - 2:00 PM)">Morning Shift (6:00 AM - 2:00 PM)</option>
+                <option value="Evening Shift (2:00 PM - 10:00 PM)">Evening Shift (2:00 PM - 10:00 PM)</option>
+                <option value="Full Day (6:00 AM - 8:00 PM)">Full Day (6:00 AM - 8:00 PM)</option>
+                <option value="Flexible Shift">Flexible Shift</option>
+              </select>
+            </label>
+            <label>Work Days
+              <select name="workingDays">
+                <option value="Monday - Saturday">Monday - Saturday (6 Days)</option>
+                <option value="Monday - Friday">Monday - Friday (5 Days)</option>
+                <option value="All 7 Days">All 7 Days</option>
+              </select>
+            </label>
+            <label>Max Client Capacity
+              <input name="maxCapacity" type="number" min="1" max="50" value="15">
+            </label>
+            <label>Commission Rate (%)
+              <input name="commission" type="number" min="0" max="100" value="30">
+            </label>
+          </div>
+        </div>
+
+        <div class="trainer-form-section">
+          <h4 class="form-section-title">📝 Trainer Profile Bio</h4>
+          <label>Bio / Training Philosophy
+            <textarea name="bio" rows="2" placeholder="Brief description of training methodology, motivation style, or background..."></textarea>
+          </label>
+        </div>
+
+        <button class="add-trainer-btn" type="submit">➕ Register & Add Trainer</button>
       </form>
-      <ul class="task-list compact-admin-list admin-manage-list">${rows || "<li>No trainers yet</li>"}</ul>
+
+      <hr class="trainer-divider">
+      <h3 class="trainer-list-title">Active Gym Trainers</h3>
+      <ul class="task-list compact-admin-list admin-manage-list trainer-detailed-list">${rows || "<li>No trainers yet</li>"}</ul>
     </details>
   `;
 }
@@ -2682,8 +2794,32 @@ function bindActions(role, state) {
 
       if (form.dataset.action === "addTrainer") {
         const id = nextEntityId(state.trainers, "T");
-        state.trainers.push({ id, name: data.name, specialty: data.specialty, sessions: 0, score: 90 });
-        addActivity(state, `Admin added trainer ${data.name}`, "Trainer");
+        const email = String(data.email || `${data.name.toLowerCase().replace(/\s+/g, '')}@aigym.com`).trim().toLowerCase();
+        const password = String(data.password || "trainer123").trim();
+
+        const newTrainer = {
+          id,
+          name: data.name.trim(),
+          email: email,
+          phone: data.phone ? data.phone.trim() : "+91 98765 43210",
+          password: password,
+          gender: data.gender || "Male",
+          age: Number(data.age) || 28,
+          specialty: data.specialty || "Strength & Conditioning",
+          certifications: data.certifications ? data.certifications.trim() : "ACE Certified Personal Trainer",
+          experience: data.experience || "3-5 Years (Senior)",
+          shift: data.shift || "Morning Shift (6:00 AM - 2:00 PM)",
+          workingDays: data.workingDays || "Monday - Saturday",
+          maxCapacity: Number(data.maxCapacity) || 15,
+          monthlyFee: Number(data.monthlyFee) || 3500,
+          commission: Number(data.commission) || 30,
+          bio: data.bio ? data.bio.trim() : "Dedicated fitness professional committed to client goals.",
+          sessions: 0,
+          score: 95
+        };
+
+        state.trainers.push(newTrainer);
+        addActivity(state, `Admin onboarded trainer ${data.name} (${newTrainer.specialty})`, "Trainer");
       }
 
       if (form.dataset.action === "updatePayment") {
